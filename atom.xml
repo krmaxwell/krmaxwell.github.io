@@ -4,7 +4,7 @@
   <title><![CDATA[Technoskald]]></title>
   <link href="http://technoskald.github.io/atom.xml" rel="self"/>
   <link href="http://technoskald.github.io/"/>
-  <updated>2013-12-20T22:37:09-06:00</updated>
+  <updated>2013-12-20T22:40:00-06:00</updated>
   <id>http://technoskald.github.io/</id>
   <author>
     <name><![CDATA[Kyle Maxwell]]></name>
@@ -14,11 +14,24 @@
 
   
   <entry>
-    <title type="html"><![CDATA[test]]></title>
-    <link href="http://technoskald.github.io/blog/2013/12/20/test/"/>
-    <updated>2013-12-20T22:13:59-06:00</updated>
-    <id>http://technoskald.github.io/blog/2013/12/20/test</id>
-    <content type="html"><![CDATA[<p>This is a test post. You&rsquo;d better show up.</p>
+    <title type="html"><![CDATA[Research Ideas]]></title>
+    <link href="http://technoskald.github.io/blog/2013/12/20/research-ideas/"/>
+    <updated>2013-12-20T22:39:25-06:00</updated>
+    <id>http://technoskald.github.io/blog/2013/12/20/research-ideas</id>
+    <content type="html"><![CDATA[<p>To start, here are my thoughts on interesting ideas for research. Feel free to use any of these as your own inspiration, but if you do, please let me know to satiate my own curiosity!</p>
+
+<ul>
+<li>Graph theoretical investigation of malware (i.e. <a href="https://github.com/technoskald/konig">konig</a>)</li>
+<li>OSINT methods / technologies</li>
+<li>Recognizing source code plaintext</li>
+<li>Hadoop for log analysis or network forensics</li>
+<li>Chromebook forensics</li>
+<li>Automated IOC extraction from malware</li>
+<li>Threat actor profiling (e.g. hacktivist motivations and methods)</li>
+<li>C2/RAT vulnerability research</li>
+<li><a href="http://en.wikipedia.org/wiki/Pareto_chart">Pareto charts</a> for log analysis</li>
+</ul>
+
 ]]></content>
   </entry>
   
