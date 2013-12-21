@@ -1,4 +1,0 @@
-technoskald.github.io
-=====================
-
-Blog
