@@ -1,24 +1,96 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Technoskald]]></title>
-  <link href="http://technoskald.github.io/atom.xml" rel="self"/>
-  <link href="http://technoskald.github.io/"/>
-  <updated>2013-12-20T23:25:02-06:00</updated>
-  <id>http://technoskald.github.io/</id>
-  <author>
-    <name><![CDATA[Kyle Maxwell]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Kent Doctrine for security intel analysis - Technoskald</title>
+  <meta name="author" content="Kyle Maxwell">
 
   
-  <entry>
-    <title type="html"><![CDATA[Kent Doctrine for security intel analysis]]></title>
-    <link href="http://technoskald.github.io/blog/2013/12/20/kent-doctrine-intel-analysis/"/>
-    <updated>2013-12-20T23:02:17-06:00</updated>
-    <id>http://technoskald.github.io/blog/2013/12/20/kent-doctrine-intel-analysis</id>
-    <content type="html"><![CDATA[<p>I’ve said before that log management matters, but <strong>log analysis matters more</strong>. Extracting and communicating useful information (analysis) requires collecting and storing your security data as well as processing the data quickly. But having all the data available won’t matter to anybody except auditors if you don’t use it in ways that inform good decisions. <a href="https://twitter.com/securityincite">Mike Rothman</a> of Securosis expressed this exceptionally well in his <a href="https://securosis.com/blog/rsa-conference-2012-guide-key-themes">preview of the 2012 RSA Conference</a>:</p>
+  <meta name="description" content="I’ve said before that log management matters, but log analysis matters more. Extracting and communicating useful information (analysis) requires &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://technoskald.github.io/blog/2013/12/20/kent-doctrine-intel-analysis/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Technoskald" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Technoskald</a></h1>
+  
+    <h2>So much hacking, so little time</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:technoskald.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Kent Doctrine for Security Intel Analysis</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-20T23:02:17-06:00" pubdate data-updated="true">2013-12-20</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I’ve said before that log management matters, but <strong>log analysis matters more</strong>. Extracting and communicating useful information (analysis) requires collecting and storing your security data as well as processing the data quickly. But having all the data available won’t matter to anybody except auditors if you don’t use it in ways that inform good decisions. <a href="https://twitter.com/securityincite">Mike Rothman</a> of Securosis expressed this exceptionally well in his <a href="https://securosis.com/blog/rsa-conference-2012-guide-key-themes">preview of the 2012 RSA Conference</a>:</p>
 
 <blockquote><p>You will see a bunch of vendors talking about their new alerting engines taking advantage of these cool new data management tactics, but at the end of the day, it’s not how something gets done – it’s still what gets done.</p>
 
@@ -47,29 +119,108 @@
 
 
 <p>Security intelligence analysts should learn from previous work, instead of simply trusting in their own domain expertise and innate intelligence. Dr. Kent <a href="http://www.au.af.mil/au/awc/awcgate/cia/strategic_warning_kent.htm">led the way</a>, and even we non-spooks can still learn from his work.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Research Ideas]]></title>
-    <link href="http://technoskald.github.io/blog/2013/12/20/research-ideas/"/>
-    <updated>2013-12-20T22:39:25-06:00</updated>
-    <id>http://technoskald.github.io/blog/2013/12/20/research-ideas</id>
-    <content type="html"><![CDATA[<p>To start, here are my thoughts on interesting ideas for research. Feel free to use any of these as your own inspiration, but if you do, please let me know to satiate my own curiosity!</p>
+</div>
 
-<ul>
-<li>Graph theoretical investigation of malware (i.e. <a href="https://github.com/technoskald/konig">konig</a>)</li>
-<li>OSINT methods / technologies</li>
-<li>Recognizing source code plaintext</li>
-<li>Hadoop for log analysis or network forensics</li>
-<li>Chromebook forensics</li>
-<li>Automated IOC extraction from malware</li>
-<li>Threat actor profiling (e.g. hacktivist motivations and methods)</li>
-<li>C2/RAT vulnerability research</li>
-<li><a href="http://en.wikipedia.org/wiki/Pareto_chart">Pareto charts</a> for log analysis</li>
-</ul>
 
-]]></content>
-  </entry>
+  <footer>
+    <p class="meta">
+      
   
-</feed>
+
+<span class="byline author vcard">Posted by <span class="fn">Kyle Maxwell</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-20T23:02:17-06:00" pubdate data-updated="true">2013-12-20</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://technoskald.github.io/blog/2013/12/20/kent-doctrine-intel-analysis/" data-via="" data-counturl="http://technoskald.github.io/blog/2013/12/20/kent-doctrine-intel-analysis/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/12/20/research-ideas/" title="Previous Post: Research Ideas">&laquo; Research Ideas</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/12/20/kent-doctrine-intel-analysis/">Kent Doctrine for security intel analysis</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/20/research-ideas/">Research Ideas</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Kyle Maxwell -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
