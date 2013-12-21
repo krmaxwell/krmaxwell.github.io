@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Technoskald]]></title>
-  <link href="http://technoskald.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Intel | Technoskald]]></title>
+  <link href="http://technoskald.github.io/blog/categories/intel/atom.xml" rel="self"/>
   <link href="http://technoskald.github.io/"/>
   <updated>2013-12-20T23:27:32-06:00</updated>
   <id>http://technoskald.github.io/</id>
@@ -47,28 +47,6 @@
 
 
 <p>Security intelligence analysts should learn from previous work, instead of simply trusting in their own domain expertise and innate intelligence. Dr. Kent <a href="http://www.au.af.mil/au/awc/awcgate/cia/strategic_warning_kent.htm">led the way</a>, and even we non-spooks can still learn from his work.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Research Ideas]]></title>
-    <link href="http://technoskald.github.io/blog/2013/12/20/research-ideas/"/>
-    <updated>2013-12-20T22:39:25-06:00</updated>
-    <id>http://technoskald.github.io/blog/2013/12/20/research-ideas</id>
-    <content type="html"><![CDATA[<p>To start, here are my thoughts on interesting ideas for research. Feel free to use any of these as your own inspiration, but if you do, please let me know to satiate my own curiosity!</p>
-
-<ul>
-<li>Graph theoretical investigation of malware (i.e. <a href="https://github.com/technoskald/konig">konig</a>)</li>
-<li>OSINT methods / technologies</li>
-<li>Recognizing source code plaintext</li>
-<li>Hadoop for log analysis or network forensics</li>
-<li>Chromebook forensics</li>
-<li>Automated IOC extraction from malware</li>
-<li>Threat actor profiling (e.g. hacktivist motivations and methods)</li>
-<li>C2/RAT vulnerability research</li>
-<li><a href="http://en.wikipedia.org/wiki/Pareto_chart">Pareto charts</a> for log analysis</li>
-</ul>
-
 ]]></content>
   </entry>
   

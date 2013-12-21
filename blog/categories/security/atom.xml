@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Technoskald]]></title>
-  <link href="http://technoskald.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Security | Technoskald]]></title>
+  <link href="http://technoskald.github.io/blog/categories/security/atom.xml" rel="self"/>
   <link href="http://technoskald.github.io/"/>
   <updated>2013-12-20T23:27:32-06:00</updated>
   <id>http://technoskald.github.io/</id>
