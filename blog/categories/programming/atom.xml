@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Programming | Technoskald]]></title>
+  <link href="http://technoskald.github.io/blog/categories/programming/atom.xml" rel="self"/>
+  <link href="http://technoskald.github.io/"/>
+  <updated>2013-12-24T21:26:27-06:00</updated>
+  <id>http://technoskald.github.io/</id>
+  <author>
+    <name><![CDATA[Kyle Maxwell]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Computers versus telescopes]]></title>
+    <link href="http://technoskald.github.io/blog/2013/12/24/computers-versus-telescopes/"/>
+    <updated>2013-12-24T21:11:48-06:00</updated>
+    <id>http://technoskald.github.io/blog/2013/12/24/computers-versus-telescopes</id>
+    <content type="html"><![CDATA[<p><blockquote><p>Computer science is no more about computers than astronomy is about telescopes.</p><footer><strong>Michael R Fellows?</strong> <cite><a href="http://en.wikiquote.org/wiki/Computer%20science#Disputed">http://en.wikiquote.org/wiki/Computer%20science#Disputed</a></cite></footer></blockquote></p>
+
+<p>Lots of folks have written in the past about the distinction between computer science and programming. A comment on Twitter reminded me of this again, but in an odd direction: the commenter expressed some dissatisfaction about having to learn some of the <em>history</em> of computer science while learning to program.</p>
+
+<p>From a certain perspective, I can understand. Folks just dabbling in something like <a href="http://csedweek.org">The Hour of Code</a> might not have the interest or motivation right away to learn about Ada Lovelace and John von Neumann and Alan Turing. They likely have the motivation just to understand the whole idea of giving specific commands to a computer and thinking in advance of possible things that could happen &ndash; the mental framework that we coders take completely for granted.</p>
+
+<p>But at the same time: learning the history of computer science matters the same way it does in any discipline. Hobbyists buying telescopes for family outings may not want to learn about, say, Galileo and Hubble and Newton (to play on the analogy in the opening quote). But once they start to take it seriously and graduate to a motivated amateur, they&rsquo;ll need to understand who those men were and why that matters.</p>
+
+<p>The <a href="http://cs.saddleback.edu/michele/Teaching/CS1A/Slides/Topic%201%20-%20History%20-%202up.pdf">history of computer science</a> may not have the depth and twists that, say, physics does. But it has its own <a href="http://www.bbc.co.uk/news/technology-25495315">drama</a> worth understanding.</p>
+]]></content>
+  </entry>
+  
+</feed>
