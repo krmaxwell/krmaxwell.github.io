@@ -4,7 +4,7 @@
   <title><![CDATA[Technoskald]]></title>
   <link href="http://technoskald.github.io/atom.xml" rel="self"/>
   <link href="http://technoskald.github.io/"/>
-  <updated>2013-12-24T21:26:27-06:00</updated>
+  <updated>2013-12-25T13:50:23-06:00</updated>
   <id>http://technoskald.github.io/</id>
   <author>
     <name><![CDATA[Kyle Maxwell]]></name>
@@ -12,6 +12,58 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Project Euler: Problem 1]]></title>
+    <link href="http://technoskald.github.io/blog/2013/12/25/project-euler-problem-1/"/>
+    <updated>2013-12-25T13:28:12-06:00</updated>
+    <id>http://technoskald.github.io/blog/2013/12/25/project-euler-problem-1</id>
+    <content type="html"><![CDATA[<p><em>NB: This is a repost of something I wrote on an old blog. Original post <a href="http://funcdata.wordpress.com/2012/05/11/project-euler-problem-1/">here</a>. Minor edits / additions to update for this newer context.</em></p>
+
+<h2>Find the sum of all the multiples of 3 or 5 below 1000.</h2>
+
+<p>My <a href="https://github.com/technoskald/projecteuler/blob/master/prob1.py">original solution</a> for this problem, like almost all the others, uses old-school imperative programming that we can do in almost any language.</p>
+
+<figure class='code'><figcaption><span>Project Euler Problem 1 the Easy Way</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">n</span><span class="o">=</span><span class="mi">0</span>
+</span><span class='line'><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">((</span><span class="n">i</span> <span class="o">%</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">((</span><span class="n">i</span> <span class="o">%</span> <span class="mi">5</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+</span><span class='line'>        <span class="n">n</span> <span class="o">+=</span> <span class="n">i</span>
+</span><span class='line'><span class="k">print</span> <span class="n">n</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>More to the point, we can also <a href="https://github.com/technoskald/funcdata/blob/master/projecteuler/p001.py">do this</a> in idiomatic Python:</p>
+
+<figure class='code'><figcaption><span>Project Euler Problem 1 the Pythonic Way</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">print</span> <span class="nb">sum</span><span class="p">(</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="mi">3</span><span class="o">==</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">i</span><span class="o">%</span><span class="mi">5</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Both give the correct answer<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>, but we used an <a href="http://docs.python.org/glossary.html#term-iterable">iterable</a> (sequence) in the second case to do the same thing as the <code>for</code> loop in the first example. We also don&rsquo;t need to maintain our own summation variable like <code>n</code>. Because of the small range of numbers we need to consider<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>, I couldn&rsquo;t find any significant difference in the average run times of these two programs. And I&rsquo;ve wanted to explore <a href="http://en.wikipedia.org/wiki/Functional_programming">functional programming</a>, too.</p>
+
+<figure class='code'><figcaption><span>Project Euler Problem 1 the Functional Way</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">print</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">5</span><span class="p">))))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This avoids maintaining <em>any</em> internal state like we did with the <code>i</code> variable above. For purposes of functional programming, I think that this would have been the optimal solution.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>I won&rsquo;t list the actual problem answers here. I know somebody can just copy and paste the code, but printing the actual answer as opposed to explaining how to solve it feels too much like cheating.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>In some later problems, I&rsquo;ll just get any needed parameters from the command line to facilitate testing and debugging.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Computers versus telescopes]]></title>
