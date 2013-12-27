@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Project Euler: Problem 3 - Technoskald</title>
+  <meta name="author" content="Kyle Maxwell">
+
+  
+  <meta name="description" content="Problem 3: The prime factors of 13195 are 5, 7, 13 and 29. What is the largest prime factor of the number 600851475143 ? Factorization is, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://technoskald.github.io/blog/2013/12/26/project-euler-problem-3/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Technoskald" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Technoskald</a></h1>
+  
+    <h2>So much hacking, so little time</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:technoskald.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Project Euler: Problem 3</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-26T20:00:31-06:00" pubdate data-updated="true">2013-12-26</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2><a href="http://projecteuler.net/problem=3">Problem 3</a>: The prime factors of 13195 are 5, 7, 13 and 29. What is the largest prime factor of the number 600851475143 ?</h2>
+
+<p><a href="http://en.wikipedia.org/wiki/Integer_factorization">Factorization</a> is, computationally speaking, a Hard Problem. When mathematicians call a problem &ldquo;hard&rdquo;, we don&rsquo;t mean &ldquo;difficult for the human mind to comprehend&rdquo;, because that is subjective and subject to change. Remember, the differential calculus literally changed history when Newton and Leibniz first wrote about it, and now we teach it to kids in high school. No, what we mean in this case<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> is that it can&rsquo;t be solved in polynomial time &ndash; meaning that, for very large numbers, this takes infeasible amounts of time with everything we know about mathematics and computation right now. In fact, it&rsquo;s so hard that it forms the mathematical basis for public-key cryptography.</p>
+
+<p>That doesn&rsquo;t mean we can&rsquo;t do it. It just means that for really, really big numbers, it takes a long time. So this problem isn&rsquo;t actually a large number, on the order of 10<sup>12</sup>. And lots of work has been done with this problem: in fact, it comes down to something called the &ldquo;Fundamental Theorem of Arithmetic&rdquo;, which is that every positive integer has a <em>unique</em> prime factorization.</p>
+
+<p>To facilitate some problems later in Project Euler, I wrote a general-purpose factorization routine that does a little more than we need here.</p>
+
+<figure class='code'><figcaption><span>Integer factorization routine</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">prime_factors</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span><span class='line'>    <span class="sd">&quot;&quot;&quot; Return the prime factors of the given number. &quot;&quot;&quot;</span>
+</span><span class='line'>    <span class="n">factors</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'>    <span class="n">lastresult</span> <span class="o">=</span> <span class="n">n</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c"># 1 is a special case</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">return</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">while</span> <span class="n">lastresult</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">c</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span class='line'>        <span class="k">while</span> <span class="n">lastresult</span> <span class="o">%</span> <span class="n">c</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">c</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">factors</span><span class="p">:</span>
+</span><span class='line'>      <span class="n">factors</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span class='line'>  <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>      <span class="n">factors</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span class='line'>        <span class="n">lastresult</span> <span class="o">/=</span> <span class="n">c</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="n">factors</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will return a Python dict, where each key is a prime factor of the original number and the value of that key is the required power to which we need to raise that factor (e.g. <code>prime_factors(18)</code> returns <code>{2:1, 3:2}</code> for <tt>2<sup>1</sup> * 3<sup>2</sup></tt>).</p>
+
+<p>Then we write a short script to call it with the appropriate number and print only the largest factor.</p>
+
+<figure class='code'><figcaption><span>Project Euler Problem 3 wrapper code</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">n</span> <span class="o">=</span> <span class="mi">600851475143</span>
+</span><span class='line'><span class="n">factors</span> <span class="o">=</span> <span class="n">prime_factors</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</span><span class='line'><span class="k">print</span> <span class="s">&quot;Largest prime factor of </span><span class="si">%d</span><span class="s"> is </span><span class="si">%d</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">factors</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>The &ldquo;hardness&rdquo; of a problem in mathematics is called its &ldquo;complexity&rdquo;. Computational complexity theory is a well-established and important field all on its own.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Kyle Maxwell</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-26T20:00:31-06:00" pubdate data-updated="true">2013-12-26</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/programming/'>Programming</a>, <a class='category' href='/blog/categories/project-euler/'>Project Euler</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://technoskald.github.io/blog/2013/12/26/project-euler-problem-3/" data-via="" data-counturl="http://technoskald.github.io/blog/2013/12/26/project-euler-problem-3/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/12/25/project-euler-problem-2/" title="Previous Post: Project Euler: Problem 2">&laquo; Project Euler: Problem 2</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/12/26/project-euler-problem-3/">Project Euler: Problem 3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/25/project-euler-problem-2/">Project Euler: Problem 2</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/25/project-euler-problem-1/">Project Euler: Problem 1</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/24/computers-versus-telescopes/">Computers versus telescopes</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/20/kent-doctrine-intel-analysis/">Kent Doctrine for security intel analysis</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Kyle Maxwell -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
