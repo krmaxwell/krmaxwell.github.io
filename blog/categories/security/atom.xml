@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Security | Technoskald]]></title>
   <link href="http://technoskald.github.io/blog/categories/security/atom.xml" rel="self"/>
   <link href="http://technoskald.github.io/"/>
-  <updated>2013-12-26T20:23:04-06:00</updated>
+  <updated>2013-12-27T09:36:41-06:00</updated>
   <id>http://technoskald.github.io/</id>
   <author>
     <name><![CDATA[Kyle Maxwell]]></name>
@@ -12,6 +12,38 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Getting started in infosec]]></title>
+    <link href="http://technoskald.github.io/blog/2013/12/27/getting-started-in-infosec/"/>
+    <updated>2013-12-27T09:11:34-06:00</updated>
+    <id>http://technoskald.github.io/blog/2013/12/27/getting-started-in-infosec</id>
+    <content type="html"><![CDATA[<p>I recently participated in a discussion on a private mailing list about people who want to get started in information security. Of course it veered into standard territory about the value of certifications and such, but a few bits turned out interesting if not exactly ground-breaking.</p>
+
+<hr />
+
+<p><img class="right" src="/images/brain-jar.gif"> What matters most: <em>education and learning and experience.</em> With very few exceptions, IT and infosec certifications mean very little to me. (And I personally have reached the point in my career that any job requiring one to get past HR is not a company where I want to work.)</p>
+
+<p>Ugh to vendor / tool certifications. I&rsquo;d rather hire somebody who knows (say) system forensics inside and out but has never used a given tool than somebody who knows how to run EnCase but doesn&rsquo;t really grasp the underlying fundamentals. Similar with the RHCE &ndash; I don&rsquo;t know that exam well, but I&rsquo;d be concerned about whether somebody &ldquo;knows Red Hat&rdquo; or &ldquo;knows Linux&rdquo; (or, better, &ldquo;knows Unix&rdquo;). I&rsquo;ve run into both types, of course: people who got a vendor cert because it helped them get a job but they really could have used any tool, and folks who claimed to know what&rsquo;s up because they have a cert &ndash; but put them in front of, say, FTK or Debian and they&rsquo;re lost. I mean, I don&rsquo;t care if my mechanic &ldquo;knows Craftsman&rdquo; as long as they can fix my car.</p>
+
+<p>A few certifications actually do say something good about the cert holder: CCIE, to a degree, and the older style SANS certs (now I think they&rsquo;re called &ldquo;Gold&rdquo;?). Although I&rsquo;d not pass somebody over for <em>having</em> a cert, I&rsquo;d pass them over for <em>overemphasizing</em> it.</p>
+
+<p>If an applicant for a junior DFIR gig hasn&rsquo;t had the opportunity to go take an expensive SANS course or whatever but can demonstrate lots of initiative and self guided education, with some open source projects or a blog that shows their understanding and personal contributions from their own research, I will likely prefer them anyway.</p>
+
+<p>So, if you want to get started cheap and don&rsquo;t know how, you could start with things like:</p>
+
+<ul>
+<li><a href="http://www.securitytube.net">SecurityTube</a></li>
+<li><a href="http://opensecuritytraining.info">Open Security Training</a></li>
+<li><a href="http://hackeracademy.com">Hacker Academy</a></li>
+</ul>
+
+
+<p>Set up a home lab and do whatever interests you. Find some online CTFs (more on this soon). Do some <a href="https://help.github.com/articles/be-social">social coding</a>. Hang out at a local <a href="http://www.securitybsides.com">BSides</a> or <a href="http://www.defcon.org/html/defcon-groups/dc-groups-index.html">DEFCON group</a>. There is no shortcut to success. You have to put in the time and effort.</p>
+
+<p>And always remember: <a href="http://www.catb.org/esr/faqs/hacker-howto.html">hack to learn</a>, don&rsquo;t learn to hack.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Kent Doctrine for security intel analysis]]></title>
