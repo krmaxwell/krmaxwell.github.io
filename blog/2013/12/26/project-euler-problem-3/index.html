@@ -131,10 +131,10 @@
 </span><span class='line'>        <span class="n">c</span> <span class="o">=</span> <span class="mi">2</span>
 </span><span class='line'>        <span class="k">while</span> <span class="n">lastresult</span> <span class="o">%</span> <span class="n">c</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
 </span><span class='line'>            <span class="n">c</span> <span class="o">+=</span> <span class="mi">1</span>
-</span><span class='line'>  <span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">factors</span><span class="p">:</span>
-</span><span class='line'>      <span class="n">factors</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-</span><span class='line'>  <span class="k">else</span><span class="p">:</span>
-</span><span class='line'>      <span class="n">factors</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span class='line'>      <span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">factors</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">factors</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">factors</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 </span><span class='line'>        <span class="n">lastresult</span> <span class="o">/=</span> <span class="n">c</span>
 </span><span class='line'>
 </span><span class='line'>    <span class="k">return</span> <span class="n">factors</span>
