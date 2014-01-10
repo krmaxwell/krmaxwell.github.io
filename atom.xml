@@ -4,7 +4,7 @@
   <title><![CDATA[Technoskald]]></title>
   <link href="http://technoskald.github.io/atom.xml" rel="self"/>
   <link href="http://technoskald.github.io/"/>
-  <updated>2013-12-29T14:57:12-06:00</updated>
+  <updated>2014-01-09T20:47:27-06:00</updated>
   <id>http://technoskald.github.io/</id>
   <author>
     <name><![CDATA[Kyle Maxwell]]></name>
@@ -12,6 +12,51 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Project Euler: Problem 4]]></title>
+    <link href="http://technoskald.github.io/blog/2014/01/09/project-euler-problem-4/"/>
+    <updated>2014-01-09T20:37:47-06:00</updated>
+    <id>http://technoskald.github.io/blog/2014/01/09/project-euler-problem-4</id>
+    <content type="html"><![CDATA[<h2><a href="http://projecteuler.net/problem=4">Problem 4</a>: A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99. Find the largest palindrome made from the product of two 3-digit numbers.</h2>
+
+<p>Palindromic numbers make much more sense to humans than computers because we can look at a number as a series of symbols rather than a scalar value. And of course they only make sense in the context of a given base; clearly we must assume base 10 here, validated by the example given.</p>
+
+<p>First we write a little function to determine whether a given integer value is a palindrome. Python&rsquo;s <a href="http://stackoverflow.com/a/509295/1569808">slice notation</a> makes this easy:</p>
+
+<figure class='code'><figcaption><span>Function to determine whether a number is a palindrome</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">is_palindrome</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">return</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Basically, appending <a href="http://stackoverflow.com/questions/509211/pythons-slice-notation#comment323779_509295"><code>[::-1]</code></a> gives us the reverse of a list.</p>
+
+<p>With that in mind, we just need a couple of for-loops to iterate over all pairs of three-digit numbers:</p>
+
+<figure class='code'><figcaption><span>Project Euler Problem 4 the obvious way</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">):</span>
+</span><span class='line'>        <span class="n">n</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="n">j</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="n">is_palindrome</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="ow">and</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="n">result</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">lasti</span> <span class="o">=</span> <span class="n">i</span>
+</span><span class='line'>            <span class="n">lastj</span> <span class="o">=</span> <span class="n">j</span>
+</span><span class='line'>            <span class="n">result</span> <span class="o">=</span> <span class="n">n</span>
+</span><span class='line'><span class="k">print</span> <span class="s">&quot;</span><span class="si">%d</span><span class="s"> is the product of </span><span class="si">%d</span><span class="s"> and </span><span class="si">%d</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">lasti</span><span class="p">,</span> <span class="n">lastj</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[2014 Tech goals]]></title>
