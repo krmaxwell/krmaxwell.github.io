@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Programming | Technoskald]]></title>
   <link href="http://technoskald.github.io/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://technoskald.github.io/"/>
-  <updated>2014-01-10T19:58:52-06:00</updated>
+  <updated>2014-01-14T22:53:51-06:00</updated>
   <id>http://technoskald.github.io/</id>
   <author>
     <name><![CDATA[Kyle Maxwell]]></name>
@@ -12,6 +12,55 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Handling URLs in Python with a wrapper function]]></title>
+    <link href="http://technoskald.github.io/blog/2014/01/14/handling-urls-python-wrapper-function/"/>
+    <updated>2014-01-14T22:24:46-06:00</updated>
+    <id>http://technoskald.github.io/blog/2014/01/14/handling-urls-python-wrapper-function</id>
+    <content type="html"><![CDATA[<p>Now for a break from Project Euler&hellip; In my projects, I find myself frequently retrieving URLs from various servers. Sometimes I need to call a REST API endpoint and other times I need to scrape a site. And like a lot of programmers, I don&rsquo;t like to rewrite code. So originally, in <a href="https://github.com/technoskald/maltrieve">Maltrieve</a>, I wrote a function called <code>get_URL()</code> that wrapped calls to <code>urllib2.urlopen()</code> so I didn&rsquo;t have to repeat the error handling every time. It <a href="https://github.com/technoskald/maltrieve/blob/b75dbe5d70aab97928648159d92ccdd2596b1d1c/malutil.py#L6">sucked</a>.</p>
+
+<p>Now in a work project, I have the same basic requirement and I brought over that function. But in daily usage, the terribad error handling kept biting me. Also, sometimes I need to set up the request with various parameters (like, say, an API key or a specific user agent string).</p>
+
+<p>For the latter requirement, <code>isinstance()</code> does the trick. We compare the parameter to the Python type <code>basestring</code> because all sorts of subclasses could get used; this mostly matters around Unicode stuff. Otherwise, we make sure the parameter is the proper type of object.</p>
+
+<p>Once we make the request, though, we need to handle possible errors. We should probably replace the calls to <code>sys.stderr.write()</code> with <code>logging.error()</code> or similar, but for my implementations to date this works fine. In the <code>urllib2</code> module, <code>HTTPError</code> is a subclass of <code>URLError</code> is a subclass of <code>IOError</code>. So we need to handle the more specific cases first, else we will never see the data for them. And while we could access specific attributes like <code>HTTPError.code</code>, since all we want to do is tell a human, we just need the base value.</p>
+
+<p>I suppose this could be rewritten as a class but that seems like one level of abstraction too far. And procedural programming can never go out of style.</p>
+
+<p>``` python get_url()</p>
+
+<h1>Utility function to get a URL with error handling</h1>
+
+<h1>Accepts URL string or urllib2.Request object</h1>
+
+<p>def get_url(orig_request):</p>
+
+<pre><code>if isinstance(orig_request, basestring):
+    url = orig_request.encode('utf8')
+    request = urllib2.Request(url)
+elif isinstance(orig_request, urllib2.Request):
+    request = orig_request
+else:
+    return None
+
+try:
+    response = urllib2.urlopen(request)
+except urllib2.HTTPError as e:
+    sys.stderr.write("The server couldn't fulfill the request for URL %s: %s\n" % (request.get_full_url(), e))
+    return None
+except urllib2.URLError as e:
+    sys.stderr.write("We failed to reach a server for URL %s: %s\n" % (request.get_full_url(), e))
+    return None
+else:
+    return response
+</code></pre>
+
+<p>```</p>
+
+<p>I need to backport this to Maltrieve soon, I think. So many projects&hellip; Although I have made this code snippet <a href="https://gist.github.com/technoskald/8430955">available as a Gist</a> for canonical purposes.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Project Euler Problem 5]]></title>
@@ -176,63 +225,6 @@ print "Largest prime factor of %d is %d" % (n, max(factors.keys()))
 </ol>
 </div>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Project Euler: Problem 2]]></title>
-    <link href="http://technoskald.github.io/blog/2013/12/25/project-euler-problem-2/"/>
-    <updated>2013-12-25T13:52:24-06:00</updated>
-    <id>http://technoskald.github.io/blog/2013/12/25/project-euler-problem-2</id>
-    <content type="html"><![CDATA[<p><em>NB: This is a repost of something I wrote on an old blog. Original post <a href="http://funcdata.wordpress.com/2012/05/11/project-euler-problem-2/">here</a>. Minor edits / additions to update for this newer context.</em></p>
-
-<h2><a href="https://projecteuler.net/problem=2">Problem 2</a>: Each new term in the <a href="http://mathworld.wolfram.com/FibonacciNumber.html">Fibonacci sequence</a> is generated by adding the previous two terms. By starting with 1 and 2, the first 10 terms will be: 1, 2, 3, 5, 8, 13, 21, 34, 55, 89,&hellip; By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.</h2>
-
-<p>As with problem 1, we could solve this with a traditional imperative approach:</p>
-
-<p>``` python Project Euler Problem 2 the Traditional Way
-n=0
-a=1
-b=2
-print &ldquo;Calculating sum&hellip;&rdquo;
-while (b &lt;= 4000000):</p>
-
-<pre><code>print "a=",a," b=",b
-if (b % 2) == 0:
-    n += b
-a,b = b,a+b
-</code></pre>
-
-<p>print &ldquo;Sum is &rdquo;,n
-```</p>
-
-<p>But we can streamline this. First, we observe that F<sub>1</sub> and F<sub>2</sub> (1 and 1, respectively) sum to F<sub>3</sub> = 2. We can also see that F<sub>4</sub>, as the sum of an odd and even, will therefore also be odd, as will F<sub>5</sub> due to being the sum of an even and odd. Clearly every third term must always be even, with the rest odd. So we only need to calculate every third term in the Fibonacci sequence. A bit of high school algebra shows us that:</p>
-
-<p><tt>
-F<sub>3</sub> = F<sub>1</sub> + F<sub>2</sub> = F<sub>1</sub> + F<sub>0</sub> + F<sub>1</sub> = F<sub>0</sub> + 2F<sub>1</sub>
-</tt></p>
-
-<p><tt>
-F<sub>4</sub> = F<sub>2</sub> + F<sub>3</sub> = (F<sub>0</sub> + F<sub>1</sub>) + (F<sub>0</sub> + 2F<sub>1</sub>) = 2F<sub>0</sub> + 3F<sub>1</sub>
-</tt></p>
-
-<p>This means we can always skip ahead and just sum those terms.</p>
-
-<p>Now we introduce the concept of a <a href="http://docs.python.org/dev/howto/functional.html#generators">generator</a> in Python. A generator function doesn&rsquo;t have a normal <code>return</code> statement. Instead, it uses <code>yield</code>, which &ldquo;pauses&rdquo; the function and returns a value. But the next time you call the generator to return another value, Python will &ldquo;unpause&rdquo; it and continue processing until it yields (returns) another value. (I&rsquo;ve simplified a bit here because I hate objects.) This effectively creates a list using <strong>list comprehension</strong>, similar to what we did in Problem 1 with the <code>i for i in range()</code> syntax.</p>
-
-<p>So to <a href="https://github.com/technoskald/funcdata/blob/master/projecteuler/p002.py">solve the problem</a>, we write a modified Fibonacci sequence generator and just print its sum. Note that we avoid multiplication as a speed optimization; this actually made a significant difference!</p>
-
-<p>``` python Project Euler Problem 2 the Generator Way
-def modfib():</p>
-
-<pre><code>a,b = 0,1
-while b &lt; 4000000:
-    a,b = a + b + b, a + a + b + b + b
-    yield a
-</code></pre>
-
-<p>print sum(modfib())
-```</p>
 ]]></content>
   </entry>
   
