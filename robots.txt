@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://technoskald.github.io/sitemap.xml 

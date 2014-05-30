@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Kent Doctrine for security intel analysis - Technoskald</title>
+  <meta name="author" content="Kyle Maxwell">
+
+  
+  <meta name="description" content="I’ve said before that log management matters, but log analysis matters more. Extracting and communicating useful information (analysis) requires &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://technoskald.github.io/blog/2013/12/20/kent-doctrine-intel-analysis/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Technoskald" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Technoskald</a></h1>
+  
+    <h2>So much hacking, so little time</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:technoskald.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Kent Doctrine for Security Intel Analysis</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-20T23:02:17-06:00" pubdate data-updated="true">2013-12-20</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I’ve said before that log management matters, but <strong>log analysis matters more</strong>. Extracting and communicating useful information (analysis) requires collecting and storing your security data as well as processing the data quickly. But having all the data available won’t matter to anybody except auditors if you don’t use it in ways that inform good decisions. <a href="https://twitter.com/securityincite">Mike Rothman</a> of Securosis expressed this exceptionally well in his <a href="https://securosis.com/blog/rsa-conference-2012-guide-key-themes">preview of the 2012 RSA Conference</a>:</p>
+
+<blockquote><p>You will see a bunch of vendors talking about their new alerting engines taking advantage of these cool new data management tactics, but at the end of the day, it’s not how something gets done – it’s still what gets done.</p>
+
+<p>So a Hadoop-based backend is no more inherently helpful than that 10-year-old RDBMS-based SIEM you never got to work. You still have to know what to ask the data engine to get meaningful answers. Rather than being blinded by the shininess of the Big Data backend focus on how to use the tool in practice. On how to set up the queries to alert on stuff that maybe you don’t know about.</p></blockquote>
+
+<p>To paraphrase Socrates, <strong>unexamined data are not worth collecting</strong>. Analysis methodology and critical thinking skills matter. Rothman is spot on with this: the value of big data tech comes when you need to grow past the capabilities that traditional SIEM and RDBMS provide. By way of analogy: if you don’t understand algebra, then don’t take a course in calculus until you have the basic prerequisites down. You’ll just frustrate yourself and waste your tuition dollars.</p>
+
+<p><img src="https://www.cia.gov/news-information/featured-story-archive/2010-featured-story-archive/Kent_Sherman_t.jpg/image.jpg" alt="Sherman Kent" />
+<em>Provided by CIA</em></p>
+
+<p>In this vein, then, I appreciated the <a href="https://www.cia.gov/library/kent-center-occasional-papers/vol1no5.htm">CIA paper on the background and work</a> of <a href="http://en.wikipedia.org/wiki/Sherman_Kent">Sherman Kent</a>, the “father of intelligence analysis”.</p>
+
+<p>He promoted an analytic doctrine that boils down to nine key points, listed in the CIA paper above. That doctrine applies across domains, not just for the sorts military and geopolitical analysis we expect from government intelligence agencies. I highly recommend that everyone read at least that section of the paper, but here are some applications for those of us involved in security intelligence analysis, especially in the private sector.</p>
+
+<ol>
+<li><p><strong>Focus on Policymaker Concerns:</strong> What keeps your management up at night? Hopefully security isn’t the only thing, of course. So assuming that your CxOs understand the general threat landscape, analysts need to ensure that they track relevant areas that can lead to useful changes and decisions at strategic and tactical levels.</p></li>
+<li><p><strong>Avoidance of a Personal Policy Agenda:</strong> Many analysts focus on threats that concern them for reasons outside of their organization. Maybe they disagree with the politics of the Occupy movement and overemphasize threats to entirely unrelated organizations, or worry about APT China because of Sinophobia rather than a reasoned assessment of the situation. Or maybe they want to drive decision makers to a particular tech solution. Even worse, they may use their analyses as weapons for corporate political plays. Doing that represents a disservice to the organization and an unprofessional approach.</p></li>
+<li><p><strong>Intellectual Rigor:</strong> This area stands as-is: &ldquo;Estimative judgments are based on evaluated and organized data, substantive expertise, and sound, open-minded postulation of assumptions. Uncertainties and gaps in in­formation are made explicit and accounted for in making predictions.&rdquo;</p></li>
+<li><p><strong>Conscious Effort to Avoid Analytic Biases:</strong> None of us can completely avoid cognitive bias, but we can make sure we understand it and try to correct for it where possible. That principally means application of the scientific method. Whether or not faith and dogma have a place in one’s personal life, they certainly do not in one’s professional analyses.</p></li>
+<li><p><strong>Willingness to Consider Other Judgments:</strong> Fight for your ideas, but playing &ldquo;devil’s advocate&rdquo; should rest on a better intellectual basis than simply spreading FUD. Recognize that others may in fact know more than you do or have insights that can help you.</p></li>
+<li><p><strong>Systematic Use of Outside Experts:</strong> In addition to seeking out and understanding the work of other analysts, don’t restrict yourself solely to your field or even industry. Work with a community and keep bringing in fresh concepts from other disciplines.</p></li>
+<li><p><strong>Collective Responsibility for Judgment:</strong> Eventually, your team will produce a report. You may not have agreed with everything that went into it, but that’s the way the sausage gets made. Once that report goes to its audience, support it. Throwing the rest of your analysis team under the bus by telling the audience &ldquo;I told them so&rdquo; doesn’t actually make you look smarter. It makes you look unprofessional. That doesn’t mean that you should ignore all criticism; rather, it means that you should be willing to take lumps with the rest of the group. If someone asks you for your opinion, give it – but clarify that it doesn’t represent the considered opinion of the rest of the team.</p></li>
+<li><p><strong>Effective communication of policy-support information and judgments:</strong> Analysts need three core skills: domain expertise, critical thinking skills, and communication ability. This includes targeting your analysis to the level appropriate to your audience. You must be able to summarize your findings in understandable and accurate ways. And you must be able to handle points of uncertainty properly.</p></li>
+<li><p><strong>Candid Admission of Mistakes:</strong> You won’t always be right. Admit it, and review past work to see what you can learn for improvement the next time. &ldquo;Try again. Fail again. Fail better.&rdquo;</p></li>
+</ol>
+
+
+<p>Security intelligence analysts should learn from previous work, instead of simply trusting in their own domain expertise and innate intelligence. Dr. Kent <a href="http://www.au.af.mil/au/awc/awcgate/cia/strategic_warning_kent.htm">led the way</a>, and even we non-spooks can still learn from his work.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Kyle Maxwell</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-20T23:02:17-06:00" pubdate data-updated="true">2013-12-20</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/intel/'>Intel</a>, <a class='category' href='/blog/categories/security/'>Security</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://technoskald.github.io/blog/2013/12/20/kent-doctrine-intel-analysis/" data-via="" data-counturl="http://technoskald.github.io/blog/2013/12/20/kent-doctrine-intel-analysis/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/12/20/research-ideas/" title="Previous Post: Research Ideas">&laquo; Research Ideas</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/12/24/computers-versus-telescopes/" title="Next Post: Computers versus telescopes">Computers versus telescopes &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/01/14/handling-urls-python-wrapper-function/">Handling URLs in Python with a wrapper function</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/10/project-euler-problem-5/">Project Euler Problem 5</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/09/project-euler-problem-4/">Project Euler: Problem 4</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/29/2014-tech-goals/">2014 Tech goals</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/27/getting-started-in-infosec/">Getting started in infosec</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Kyle Maxwell -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

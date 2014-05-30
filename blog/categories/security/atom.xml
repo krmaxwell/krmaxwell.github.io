@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Security | Technoskald]]></title>
+  <link href="http://technoskald.github.io/blog/categories/security/atom.xml" rel="self"/>
+  <link href="http://technoskald.github.io/"/>
+  <updated>2014-01-14T22:53:51-06:00</updated>
+  <id>http://technoskald.github.io/</id>
+  <author>
+    <name><![CDATA[Kyle Maxwell]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Getting started in infosec]]></title>
+    <link href="http://technoskald.github.io/blog/2013/12/27/getting-started-in-infosec/"/>
+    <updated>2013-12-27T09:11:34-06:00</updated>
+    <id>http://technoskald.github.io/blog/2013/12/27/getting-started-in-infosec</id>
+    <content type="html"><![CDATA[<p>I recently participated in a discussion on a private mailing list about people who want to get started in information security. Of course it veered into standard territory about the value of certifications and such, but a few bits turned out interesting if not exactly ground-breaking.</p>
+
+<hr />
+
+<p><img class="right" src="/images/brain-jar.gif"> What matters most: <em>education and learning and experience.</em> With very few exceptions, IT and infosec certifications mean very little to me. (And I personally have reached the point in my career that any job requiring one to get past HR is not a company where I want to work.)</p>
+
+<p>Ugh to vendor / tool certifications. I&rsquo;d rather hire somebody who knows (say) system forensics inside and out but has never used a given tool than somebody who knows how to run EnCase but doesn&rsquo;t really grasp the underlying fundamentals. Similar with the RHCE &ndash; I don&rsquo;t know that exam well, but I&rsquo;d be concerned about whether somebody &ldquo;knows Red Hat&rdquo; or &ldquo;knows Linux&rdquo; (or, better, &ldquo;knows Unix&rdquo;). I&rsquo;ve run into both types, of course: people who got a vendor cert because it helped them get a job but they really could have used any tool, and folks who claimed to know what&rsquo;s up because they have a cert &ndash; but put them in front of, say, FTK or Debian and they&rsquo;re lost. I mean, I don&rsquo;t care if my mechanic &ldquo;knows Craftsman&rdquo; as long as they can fix my car.</p>
+
+<p>A few certifications actually do say something good about the cert holder: CCIE, to a degree, and the older style SANS certs (now I think they&rsquo;re called &ldquo;Gold&rdquo;?). Although I&rsquo;d not pass somebody over for <em>having</em> a cert, I&rsquo;d pass them over for <em>overemphasizing</em> it.</p>
+
+<p>If an applicant for a junior DFIR gig hasn&rsquo;t had the opportunity to go take an expensive SANS course or whatever but can demonstrate lots of initiative and self guided education, with some open source projects or a blog that shows their understanding and personal contributions from their own research, I will likely prefer them anyway.</p>
+
+<p>So, if you want to get started cheap and don&rsquo;t know how, you could start with things like:</p>
+
+<ul>
+<li><a href="http://www.securitytube.net">SecurityTube</a></li>
+<li><a href="http://opensecuritytraining.info">Open Security Training</a></li>
+<li><a href="http://hackeracademy.com">Hacker Academy</a></li>
+</ul>
+
+
+<p>Set up a home lab and do whatever interests you. Find some online CTFs (more on this soon). Do some <a href="https://help.github.com/articles/be-social">social coding</a>. Hang out at a local <a href="http://www.securitybsides.com">BSides</a> or <a href="http://www.defcon.org/html/defcon-groups/dc-groups-index.html">DEFCON group</a>. There is no shortcut to success. You have to put in the time and effort.</p>
+
+<p>And always remember: <a href="http://www.catb.org/esr/faqs/hacker-howto.html">hack to learn</a>, don&rsquo;t learn to hack.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Kent Doctrine for security intel analysis]]></title>
+    <link href="http://technoskald.github.io/blog/2013/12/20/kent-doctrine-intel-analysis/"/>
+    <updated>2013-12-20T23:02:17-06:00</updated>
+    <id>http://technoskald.github.io/blog/2013/12/20/kent-doctrine-intel-analysis</id>
+    <content type="html"><![CDATA[<p>I’ve said before that log management matters, but <strong>log analysis matters more</strong>. Extracting and communicating useful information (analysis) requires collecting and storing your security data as well as processing the data quickly. But having all the data available won’t matter to anybody except auditors if you don’t use it in ways that inform good decisions. <a href="https://twitter.com/securityincite">Mike Rothman</a> of Securosis expressed this exceptionally well in his <a href="https://securosis.com/blog/rsa-conference-2012-guide-key-themes">preview of the 2012 RSA Conference</a>:</p>
+
+<blockquote><p>You will see a bunch of vendors talking about their new alerting engines taking advantage of these cool new data management tactics, but at the end of the day, it’s not how something gets done – it’s still what gets done.</p>
+
+<p>So a Hadoop-based backend is no more inherently helpful than that 10-year-old RDBMS-based SIEM you never got to work. You still have to know what to ask the data engine to get meaningful answers. Rather than being blinded by the shininess of the Big Data backend focus on how to use the tool in practice. On how to set up the queries to alert on stuff that maybe you don’t know about.</p></blockquote>
+
+<p>To paraphrase Socrates, <strong>unexamined data are not worth collecting</strong>. Analysis methodology and critical thinking skills matter. Rothman is spot on with this: the value of big data tech comes when you need to grow past the capabilities that traditional SIEM and RDBMS provide. By way of analogy: if you don’t understand algebra, then don’t take a course in calculus until you have the basic prerequisites down. You’ll just frustrate yourself and waste your tuition dollars.</p>
+
+<p><img src="https://www.cia.gov/news-information/featured-story-archive/2010-featured-story-archive/Kent_Sherman_t.jpg/image.jpg" alt="Sherman Kent" />
+<em>Provided by CIA</em></p>
+
+<p>In this vein, then, I appreciated the <a href="https://www.cia.gov/library/kent-center-occasional-papers/vol1no5.htm">CIA paper on the background and work</a> of <a href="http://en.wikipedia.org/wiki/Sherman_Kent">Sherman Kent</a>, the “father of intelligence analysis”.</p>
+
+<p>He promoted an analytic doctrine that boils down to nine key points, listed in the CIA paper above. That doctrine applies across domains, not just for the sorts military and geopolitical analysis we expect from government intelligence agencies. I highly recommend that everyone read at least that section of the paper, but here are some applications for those of us involved in security intelligence analysis, especially in the private sector.</p>
+
+<ol>
+<li><p><strong>Focus on Policymaker Concerns:</strong> What keeps your management up at night? Hopefully security isn’t the only thing, of course. So assuming that your CxOs understand the general threat landscape, analysts need to ensure that they track relevant areas that can lead to useful changes and decisions at strategic and tactical levels.</p></li>
+<li><p><strong>Avoidance of a Personal Policy Agenda:</strong> Many analysts focus on threats that concern them for reasons outside of their organization. Maybe they disagree with the politics of the Occupy movement and overemphasize threats to entirely unrelated organizations, or worry about APT China because of Sinophobia rather than a reasoned assessment of the situation. Or maybe they want to drive decision makers to a particular tech solution. Even worse, they may use their analyses as weapons for corporate political plays. Doing that represents a disservice to the organization and an unprofessional approach.</p></li>
+<li><p><strong>Intellectual Rigor:</strong> This area stands as-is: &ldquo;Estimative judgments are based on evaluated and organized data, substantive expertise, and sound, open-minded postulation of assumptions. Uncertainties and gaps in in­formation are made explicit and accounted for in making predictions.&rdquo;</p></li>
+<li><p><strong>Conscious Effort to Avoid Analytic Biases:</strong> None of us can completely avoid cognitive bias, but we can make sure we understand it and try to correct for it where possible. That principally means application of the scientific method. Whether or not faith and dogma have a place in one’s personal life, they certainly do not in one’s professional analyses.</p></li>
+<li><p><strong>Willingness to Consider Other Judgments:</strong> Fight for your ideas, but playing &ldquo;devil’s advocate&rdquo; should rest on a better intellectual basis than simply spreading FUD. Recognize that others may in fact know more than you do or have insights that can help you.</p></li>
+<li><p><strong>Systematic Use of Outside Experts:</strong> In addition to seeking out and understanding the work of other analysts, don’t restrict yourself solely to your field or even industry. Work with a community and keep bringing in fresh concepts from other disciplines.</p></li>
+<li><p><strong>Collective Responsibility for Judgment:</strong> Eventually, your team will produce a report. You may not have agreed with everything that went into it, but that’s the way the sausage gets made. Once that report goes to its audience, support it. Throwing the rest of your analysis team under the bus by telling the audience &ldquo;I told them so&rdquo; doesn’t actually make you look smarter. It makes you look unprofessional. That doesn’t mean that you should ignore all criticism; rather, it means that you should be willing to take lumps with the rest of the group. If someone asks you for your opinion, give it – but clarify that it doesn’t represent the considered opinion of the rest of the team.</p></li>
+<li><p><strong>Effective communication of policy-support information and judgments:</strong> Analysts need three core skills: domain expertise, critical thinking skills, and communication ability. This includes targeting your analysis to the level appropriate to your audience. You must be able to summarize your findings in understandable and accurate ways. And you must be able to handle points of uncertainty properly.</p></li>
+<li><p><strong>Candid Admission of Mistakes:</strong> You won’t always be right. Admit it, and review past work to see what you can learn for improvement the next time. &ldquo;Try again. Fail again. Fail better.&rdquo;</p></li>
+</ol>
+
+
+<p>Security intelligence analysts should learn from previous work, instead of simply trusting in their own domain expertise and innate intelligence. Dr. Kent <a href="http://www.au.af.mil/au/awc/awcgate/cia/strategic_warning_kent.htm">led the way</a>, and even we non-spooks can still learn from his work.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Research Ideas]]></title>
+    <link href="http://technoskald.github.io/blog/2013/12/20/research-ideas/"/>
+    <updated>2013-12-20T22:39:25-06:00</updated>
+    <id>http://technoskald.github.io/blog/2013/12/20/research-ideas</id>
+    <content type="html"><![CDATA[<p>To start, here are my thoughts on interesting ideas for research. Feel free to use any of these as your own inspiration, but if you do, please let me know to satiate my own curiosity!</p>
+
+<ul>
+<li>Graph theoretical investigation of malware (i.e. <a href="https://github.com/technoskald/konig">konig</a>)</li>
+<li>OSINT methods / technologies</li>
+<li>Recognizing source code plaintext</li>
+<li>Hadoop for log analysis or network forensics</li>
+<li>Chromebook forensics</li>
+<li>Automated IOC extraction from malware</li>
+<li>Threat actor profiling (e.g. hacktivist motivations and methods)</li>
+<li>C2/RAT vulnerability research</li>
+<li><a href="http://en.wikipedia.org/wiki/Pareto_chart">Pareto charts</a> for log analysis</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
