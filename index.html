@@ -161,161 +161,6 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/01/10/project-euler-problem-5/">Project Euler Problem 5</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-10T18:50:39-06:00" pubdate data-updated="true">2014-01-10</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2><a href="http://projecteuler.net/problem=5">Problem 5</a>: 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder. What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?</h2>
-
-<p>Around fourth or fifth grade (in the US, usually around 10 or 11 years old), we learned the concept of a <a href="http://en.wikipedia.org/wiki/Least_common_multiple"><strong>least common multiple</strong></a>. While the problem statement doesn&rsquo;t use that specific term, it actually contains a pretty decent definition of it: &ldquo;the smallest number that can be divided by each of the numbers [in a set] without any remainder&rdquo;. <code>LCM(1,2,3,4,5,6,7,8,9,10) == 2520</code> provides a helpful assertion to validate our code before running it on the real problem.</p>
-
-<p>The easiest way for me to understand this problem is to apply the <strong>Fundamental Theorem of Arithmetic</strong> again and get the prime factorization of each number between 1 and the max in the set, exclusive. In other words, we calculate factors of 2 thru 9 for the example in the problem. Fortunately, we wrote code<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> to do this before in <a href="http://technoskald.github.io/blog/2013/12/26/project-euler-problem-3/">Problem 3</a> (see <code>prime_factors()</code> there).</p>
-
-<p>Then for our core logic, we define <code>n</code> as our maximum number and proceed as follows:</p>
-
-<figure class='code'><figcaption><span>Project Euler Problem 5</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">lcm</span> <span class="o">=</span> <span class="mi">1</span>
-</span><span class='line'><span class="n">factors</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-</span><span class='line'>    <span class="n">candidate_factors</span> <span class="o">=</span> <span class="n">prime_factors</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">print</span> <span class="s">&quot;* Factors for </span><span class="si">%d</span><span class="s"> are: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">print_factors</span><span class="p">(</span><span class="n">candidate_factors</span><span class="p">))</span>
-</span><span class='line'>    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">candidate_factors</span><span class="p">:</span>
-</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">factors</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">candidate_factors</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">factors</span><span class="p">[</span><span class="n">j</span><span class="p">]):</span>
-</span><span class='line'>            <span class="n">factors</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">candidate_factors</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">print</span> <span class="s">&quot;Factors of LCM are </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">print_factors</span><span class="p">(</span><span class="n">factors</span><span class="p">)</span>
-</span><span class='line'><span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">factors</span><span class="p">:</span>
-</span><span class='line'>    <span class="n">lcm</span> <span class="o">=</span> <span class="n">lcm</span> <span class="o">*</span> <span class="n">f</span> <span class="o">**</span> <span class="n">factors</span><span class="p">[</span><span class="n">f</span><span class="p">]</span>
-</span><span class='line'><span class="k">print</span> <span class="s">&quot;LCM is </span><span class="si">%d</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">lcm</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>For each number in that range, we calculate the prime factorizationi (stored as a dictionary where each key-value pair is a factor consisting of a prime number and the power). Then we build the LCM from finding the highest power of each prime number in all the factorizations. Our test example (<code>n=10</code>) validated so then we re-run with <code>n=20</code>.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>Turns out that earlier code had some indentation problems in the blog post (not the actual source on my system, fortunately). All fixed now, sorry.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/01/09/project-euler-problem-4/">Project Euler: Problem 4</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-09T20:37:47-06:00" pubdate data-updated="true">2014-01-09</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2><a href="http://projecteuler.net/problem=4">Problem 4</a>: A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99. Find the largest palindrome made from the product of two 3-digit numbers.</h2>
-
-<p>Palindromic numbers make much more sense to humans than computers because we can look at a number as a series of symbols rather than a scalar value. And of course they only make sense in the context of a given base; clearly we must assume base 10 here, validated by the example given.</p>
-
-<p>First we write a little function to determine whether a given integer value is a palindrome. Python&rsquo;s <a href="http://stackoverflow.com/a/509295/1569808">slice notation</a> makes this easy:</p>
-
-<figure class='code'><figcaption><span>Function to determine whether a number is a palindrome</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">is_palindrome</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-</span><span class='line'>    <span class="k">return</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Basically, appending <a href="http://stackoverflow.com/questions/509211/pythons-slice-notation#comment323779_509295"><code>[::-1]</code></a> gives us the reverse of a list.</p>
-
-<p>With that in mind, we just need a couple of for-loops to iterate over all pairs of three-digit numbers:</p>
-
-<figure class='code'><figcaption><span>Project Euler Problem 4 the obvious way</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span class='line'><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">):</span>
-</span><span class='line'>    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">):</span>
-</span><span class='line'>        <span class="n">n</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="n">j</span>
-</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="n">is_palindrome</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="ow">and</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="n">result</span><span class="p">:</span>
-</span><span class='line'>            <span class="n">lasti</span> <span class="o">=</span> <span class="n">i</span>
-</span><span class='line'>            <span class="n">lastj</span> <span class="o">=</span> <span class="n">j</span>
-</span><span class='line'>            <span class="n">result</span> <span class="o">=</span> <span class="n">n</span>
-</span><span class='line'><span class="k">print</span> <span class="s">&quot;</span><span class="si">%d</span><span class="s"> is the product of </span><span class="si">%d</span><span class="s"> and </span><span class="si">%d</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">lasti</span><span class="p">,</span> <span class="n">lastj</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
       <h1 class="entry-title"><a href="/blog/2013/12/29/2014-tech-goals/">2014 Tech Goals</a></h1>
     
     
@@ -411,289 +256,6 @@
 <p>Set up a home lab and do whatever interests you. Find some online CTFs (more on this soon). Do some <a href="https://help.github.com/articles/be-social">social coding</a>. Hang out at a local <a href="http://www.securitybsides.com">BSides</a> or <a href="http://www.defcon.org/html/defcon-groups/dc-groups-index.html">DEFCON group</a>. There is no shortcut to success. You have to put in the time and effort.</p>
 
 <p>And always remember: <a href="http://www.catb.org/esr/faqs/hacker-howto.html">hack to learn</a>, don&rsquo;t learn to hack.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/26/project-euler-problem-3/">Project Euler: Problem 3</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-26T20:00:31-06:00" pubdate data-updated="true">2013-12-26</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2><a href="http://projecteuler.net/problem=3">Problem 3</a>: The prime factors of 13195 are 5, 7, 13 and 29. What is the largest prime factor of the number 600851475143 ?</h2>
-
-<p><a href="http://en.wikipedia.org/wiki/Integer_factorization">Factorization</a> is, computationally speaking, a Hard Problem. When mathematicians call a problem &ldquo;hard&rdquo;, we don&rsquo;t mean &ldquo;difficult for the human mind to comprehend&rdquo;, because that is subjective and subject to change. Remember, the differential calculus literally changed history when Newton and Leibniz first wrote about it, and now we teach it to kids in high school. No, what we mean in this case<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> is that it can&rsquo;t be solved in polynomial time &ndash; meaning that, for very large numbers, this takes infeasible amounts of time with everything we know about mathematics and computation right now. In fact, it&rsquo;s so hard that it forms the mathematical basis for public-key cryptography.</p>
-
-<p>That doesn&rsquo;t mean we can&rsquo;t do it. It just means that for really, really big numbers, it takes a long time. So this problem isn&rsquo;t actually a large number, on the order of 10<sup>12</sup>. And lots of work has been done with this problem: in fact, it comes down to something called the &ldquo;Fundamental Theorem of Arithmetic&rdquo;, which is that every positive integer has a <em>unique</em> prime factorization.</p>
-
-<p>To facilitate some problems later in Project Euler, I wrote a general-purpose factorization routine that does a little more than we need here.</p>
-
-<figure class='code'><figcaption><span>Integer factorization routine</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">prime_factors</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-</span><span class='line'>    <span class="sd">&quot;&quot;&quot; Return the prime factors of the given number. &quot;&quot;&quot;</span>
-</span><span class='line'>    <span class="n">factors</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span class='line'>    <span class="n">lastresult</span> <span class="o">=</span> <span class="n">n</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c"># 1 is a special case</span>
-</span><span class='line'>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-</span><span class='line'>        <span class="k">return</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">while</span> <span class="n">lastresult</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
-</span><span class='line'>        <span class="n">c</span> <span class="o">=</span> <span class="mi">2</span>
-</span><span class='line'>        <span class="k">while</span> <span class="n">lastresult</span> <span class="o">%</span> <span class="n">c</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-</span><span class='line'>            <span class="n">c</span> <span class="o">+=</span> <span class="mi">1</span>
-</span><span class='line'>        <span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">factors</span><span class="p">:</span>
-</span><span class='line'>            <span class="n">factors</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
-</span><span class='line'>            <span class="n">factors</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-</span><span class='line'>        <span class="n">lastresult</span> <span class="o">/=</span> <span class="n">c</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">return</span> <span class="n">factors</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This will return a Python dict, where each key is a prime factor of the original number and the value of that key is the required power to which we need to raise that factor (e.g. <code>prime_factors(18)</code> returns <code>{2:1, 3:2}</code> for <tt>2<sup>1</sup> * 3<sup>2</sup></tt>).</p>
-
-<p>Then we write a short script to call it with the appropriate number and print only the largest factor.</p>
-
-<figure class='code'><figcaption><span>Project Euler Problem 3 wrapper code</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">n</span> <span class="o">=</span> <span class="mi">600851475143</span>
-</span><span class='line'><span class="n">factors</span> <span class="o">=</span> <span class="n">prime_factors</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-</span><span class='line'><span class="k">print</span> <span class="s">&quot;Largest prime factor of </span><span class="si">%d</span><span class="s"> is </span><span class="si">%d</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">factors</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>The &ldquo;hardness&rdquo; of a problem in mathematics is called its &ldquo;complexity&rdquo;. Computational complexity theory is a well-established and important field all on its own.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/25/project-euler-problem-2/">Project Euler: Problem 2</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-25T13:52:24-06:00" pubdate data-updated="true">2013-12-25</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><em>NB: This is a repost of something I wrote on an old blog. Original post <a href="http://funcdata.wordpress.com/2012/05/11/project-euler-problem-2/">here</a>. Minor edits / additions to update for this newer context.</em></p>
-
-<h2><a href="https://projecteuler.net/problem=2">Problem 2</a>: Each new term in the <a href="http://mathworld.wolfram.com/FibonacciNumber.html">Fibonacci sequence</a> is generated by adding the previous two terms. By starting with 1 and 2, the first 10 terms will be: 1, 2, 3, 5, 8, 13, 21, 34, 55, 89,&hellip; By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.</h2>
-
-<p>As with problem 1, we could solve this with a traditional imperative approach:</p>
-
-<figure class='code'><figcaption><span>Project Euler Problem 2 the Traditional Way</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">n</span><span class="o">=</span><span class="mi">0</span>
-</span><span class='line'><span class="n">a</span><span class="o">=</span><span class="mi">1</span>
-</span><span class='line'><span class="n">b</span><span class="o">=</span><span class="mi">2</span>
-</span><span class='line'><span class="k">print</span> <span class="s">&quot;Calculating sum...&quot;</span>
-</span><span class='line'><span class="k">while</span> <span class="p">(</span><span class="n">b</span> <span class="o">&lt;=</span> <span class="mi">4000000</span><span class="p">):</span>
-</span><span class='line'>  <span class="k">print</span> <span class="s">&quot;a=&quot;</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="s">&quot; b=&quot;</span><span class="p">,</span><span class="n">b</span>
-</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span><span class='line'>      <span class="n">n</span> <span class="o">+=</span> <span class="n">b</span>
-</span><span class='line'>  <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="o">+</span><span class="n">b</span>
-</span><span class='line'><span class="k">print</span> <span class="s">&quot;Sum is &quot;</span><span class="p">,</span><span class="n">n</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>But we can streamline this. First, we observe that F<sub>1</sub> and F<sub>2</sub> (1 and 1, respectively) sum to F<sub>3</sub> = 2. We can also see that F<sub>4</sub>, as the sum of an odd and even, will therefore also be odd, as will F<sub>5</sub> due to being the sum of an even and odd. Clearly every third term must always be even, with the rest odd. So we only need to calculate every third term in the Fibonacci sequence. A bit of high school algebra shows us that:</p>
-
-<p><tt>
-F<sub>3</sub> = F<sub>1</sub> + F<sub>2</sub> = F<sub>1</sub> + F<sub>0</sub> + F<sub>1</sub> = F<sub>0</sub> + 2F<sub>1</sub>
-</tt></p>
-
-<p><tt>
-F<sub>4</sub> = F<sub>2</sub> + F<sub>3</sub> = (F<sub>0</sub> + F<sub>1</sub>) + (F<sub>0</sub> + 2F<sub>1</sub>) = 2F<sub>0</sub> + 3F<sub>1</sub>
-</tt></p>
-
-<p>This means we can always skip ahead and just sum those terms.</p>
-
-<p>Now we introduce the concept of a <a href="http://docs.python.org/dev/howto/functional.html#generators">generator</a> in Python. A generator function doesn&rsquo;t have a normal <code>return</code> statement. Instead, it uses <code>yield</code>, which &ldquo;pauses&rdquo; the function and returns a value. But the next time you call the generator to return another value, Python will &ldquo;unpause&rdquo; it and continue processing until it yields (returns) another value. (I&rsquo;ve simplified a bit here because I hate objects.) This effectively creates a list using <strong>list comprehension</strong>, similar to what we did in Problem 1 with the <code>i for i in range()</code> syntax.</p>
-
-<p>So to <a href="https://github.com/technoskald/funcdata/blob/master/projecteuler/p002.py">solve the problem</a>, we write a modified Fibonacci sequence generator and just print its sum. Note that we avoid multiplication as a speed optimization; this actually made a significant difference!</p>
-
-<figure class='code'><figcaption><span>Project Euler Problem 2 the Generator Way</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">modfib</span><span class="p">():</span>
-</span><span class='line'>    <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span>
-</span><span class='line'>    <span class="k">while</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="mi">4000000</span><span class="p">:</span>
-</span><span class='line'>        <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">b</span>
-</span><span class='line'>        <span class="k">yield</span> <span class="n">a</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">print</span> <span class="nb">sum</span><span class="p">(</span><span class="n">modfib</span><span class="p">())</span>
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/25/project-euler-problem-1/">Project Euler: Problem 1</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-25T13:28:12-06:00" pubdate data-updated="true">2013-12-25</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><em>NB: This is a repost of something I wrote on an old blog. Original post <a href="http://funcdata.wordpress.com/2012/05/11/project-euler-problem-1/">here</a>. Minor edits / additions to update for this newer context.</em></p>
-
-<h2><a href="https://projecteuler.net/problem=1">Problem 1</a>: Find the sum of all the multiples of 3 or 5 below 1000.</h2>
-
-<p>My <a href="https://github.com/technoskald/projecteuler/blob/master/prob1.py">original solution</a> for this problem, like almost all the others, uses old-school imperative programming that we can do in almost any language.</p>
-
-<figure class='code'><figcaption><span>Project Euler Problem 1 the Easy Way</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">n</span><span class="o">=</span><span class="mi">0</span>
-</span><span class='line'><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
-</span><span class='line'>    <span class="k">if</span> <span class="p">((</span><span class="n">i</span> <span class="o">%</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">((</span><span class="n">i</span> <span class="o">%</span> <span class="mi">5</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
-</span><span class='line'>        <span class="n">n</span> <span class="o">+=</span> <span class="n">i</span>
-</span><span class='line'><span class="k">print</span> <span class="n">n</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>More to the point, we can also <a href="https://github.com/technoskald/funcdata/blob/master/projecteuler/p001.py">do this</a> in idiomatic Python:</p>
-
-<figure class='code'><figcaption><span>Project Euler Problem 1 the Pythonic Way</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">print</span> <span class="nb">sum</span><span class="p">(</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="mi">3</span><span class="o">==</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">i</span><span class="o">%</span><span class="mi">5</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Both give the correct answer<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>, but we used an <a href="http://docs.python.org/glossary.html#term-iterable">iterable</a> (sequence) in the second case to do the same thing as the <code>for</code> loop in the first example. We also don&rsquo;t need to maintain our own summation variable like <code>n</code>. Because of the small range of numbers we need to consider<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>, I couldn&rsquo;t find any significant difference in the average run times of these two programs. And I&rsquo;ve wanted to explore <a href="http://en.wikipedia.org/wiki/Functional_programming">functional programming</a>, too.</p>
-
-<figure class='code'><figcaption><span>Project Euler Problem 1 the Functional Way</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">print</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">5</span><span class="p">))))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This avoids maintaining <em>any</em> internal state like we did with the <code>i</code> variable above. For purposes of functional programming, I think that this would have been the optimal solution.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>I won&rsquo;t list the actual problem answers here. I know somebody can just copy and paste the code, but printing the actual answer as opposed to explaining how to solve it feels too much like cheating.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>In some later problems, I&rsquo;ll just get any needed parameters from the command line to facilitate testing and debugging.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
 </div>
   
   
@@ -810,9 +372,56 @@ F<sub>4</sub> = F<sub>2</sub> + F<sub>3</sub> = (F<sub>0</sub> + F<sub>1</sub>) 
 
     </article>
   
-  <div class="pagination">
+  
+    <article>
+      
+  <header>
     
-      <a class="prev" href="/blog/page/2/">&larr; Older</a>
+      <h1 class="entry-title"><a href="/blog/2013/12/20/research-ideas/">Research Ideas</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-20T22:39:25-06:00" pubdate data-updated="true">2013-12-20</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>To start, here are my thoughts on interesting ideas for research. Feel free to use any of these as your own inspiration, but if you do, please let me know to satiate my own curiosity!</p>
+
+<ul>
+<li>Graph theoretical investigation of malware (i.e. <a href="https://github.com/technoskald/konig">konig</a>)</li>
+<li>OSINT methods / technologies</li>
+<li>Recognizing source code plaintext</li>
+<li>Hadoop for log analysis or network forensics</li>
+<li>Chromebook forensics</li>
+<li>Automated IOC extraction from malware</li>
+<li>Threat actor profiling (e.g. hacktivist motivations and methods)</li>
+<li>C2/RAT vulnerability research</li>
+<li><a href="http://en.wikipedia.org/wiki/Pareto_chart">Pareto charts</a> for log analysis</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -829,19 +438,19 @@ F<sub>4</sub> = F<sub>2</sub> + F<sub>3</sub> = (F<sub>0</sub> + F<sub>1</sub>) 
       </li>
     
       <li class="post">
-        <a href="/blog/2014/01/10/project-euler-problem-5/">Project Euler Problem 5</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/09/project-euler-problem-4/">Project Euler: Problem 4</a>
-      </li>
-    
-      <li class="post">
         <a href="/blog/2013/12/29/2014-tech-goals/">2014 Tech goals</a>
       </li>
     
       <li class="post">
         <a href="/blog/2013/12/27/getting-started-in-infosec/">Getting started in infosec</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/24/computers-versus-telescopes/">Computers versus telescopes</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/20/kent-doctrine-intel-analysis/">Kent Doctrine for security intel analysis</a>
       </li>
     
   </ul>
