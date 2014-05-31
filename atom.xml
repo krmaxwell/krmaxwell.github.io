@@ -4,7 +4,7 @@
   <title><![CDATA[Technoskald]]></title>
   <link href="http://technoskald.github.io/atom.xml" rel="self"/>
   <link href="http://technoskald.github.io/"/>
-  <updated>2014-05-29T23:04:54-05:00</updated>
+  <updated>2014-05-30T20:36:16-05:00</updated>
   <id>http://technoskald.github.io/</id>
   <author>
     <name><![CDATA[Kyle Maxwell]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Hackertainment]]></title>
+    <link href="http://technoskald.github.io/blog/2014/05/30/hackertainment/"/>
+    <updated>2014-05-30T20:29:06-05:00</updated>
+    <id>http://technoskald.github.io/blog/2014/05/30/hackertainment</id>
+    <content type="html"><![CDATA[<p>Combining two of my oldest hobbies (gaming and coding), <a href="http://hackertainment.net">Hackertainment.net</a> tries to list as many coding and security &ldquo;games&rdquo; as possible. This also includes programming challenges and contests, like <a href="http://projecteuler.net">Project Euler</a>.</p>
+
+<p><a href="https://github.com/technoskald/coding-entertainment">Pull requests or issues</a> are welcome, so if you know of similar ones, please let me know.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Handling URLs in Python with a wrapper function]]></title>
