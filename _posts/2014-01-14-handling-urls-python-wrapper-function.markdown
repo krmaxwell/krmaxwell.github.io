@@ -16,7 +16,7 @@ Once we make the request, though, we need to handle possible errors. We should p
 
 I suppose this could be rewritten as a class but that seems like one level of abstraction too far. And procedural programming can never go out of style.
 
-``` python get_url()
+{% highlight python %}
 # Utility function to get a URL with error handling
 # Accepts URL string or urllib2.Request object
 def get_url(orig_request):
@@ -38,6 +38,6 @@ def get_url(orig_request):
         return None
     else:
         return response
-```
+{% endhighlight %}
 
 I need to backport this to Maltrieve soon, I think. So many projects... Although I have made this code snippet [available as a Gist](https://gist.github.com/technoskald/8430955) for canonical purposes.
