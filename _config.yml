@@ -1,5 +1,6 @@
 # Site settings
 title: Technoskald
+name: Technoskald
 email: krmaxwell@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
         So much hacking, so little time
@@ -12,4 +13,8 @@ github_username:  technoskald
 markdown: kramdown
 
 # Octopress migration
-permalink: /blog/:year/:month/:day/:title/
+permalink: /:year/:month/:day/:title/
+
+# Solarized
+paginate: 10
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
