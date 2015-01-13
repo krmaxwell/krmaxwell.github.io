@@ -10,7 +10,7 @@ I recently participated in a discussion on a private mailing list about people w
 
 ---
 
-{% img right /images/brain-jar.gif %} What matters most: *education and learning and experience.* With very few exceptions, IT and infosec certifications mean very little to me. (And I personally have reached the point in my career that any job requiring one to get past HR is not a company where I want to work.)
+What matters most: *education and learning and experience.* With very few exceptions, IT and infosec certifications mean very little to me. (And I personally have reached the point in my career that any job requiring one to get past HR is not a company where I want to work.)
 
 Ugh to vendor / tool certifications. I'd rather hire somebody who knows (say) system forensics inside and out but has never used a given tool than somebody who knows how to run EnCase but doesn't really grasp the underlying fundamentals. Similar with the RHCE - I don't know that exam well, but I'd be concerned about whether somebody "knows Red Hat" or "knows Linux" (or, better, "knows Unix"). I've run into both types, of course: people who got a vendor cert because it helped them get a job but they really could have used any tool, and folks who claimed to know what's up because they have a cert - but put them in front of, say, FTK or Debian and they're lost. I mean, I don't care if my mechanic "knows Craftsman" as long as they can fix my car.
 

@@ -6,9 +6,7 @@ comments: true
 categories: Programming
 ---
 
-{% blockquote Michael R Fellows?, http://en.wikiquote.org/wiki/Computer%20science#Disputed %}
-Computer science is no more about computers than astronomy is about telescopes.
-{% endblockquote %}
+> Computer science is no more about computers than astronomy is about telescopes.  -- Michael R Fellows [?](http://en.wikiquote.org/wiki/Computer%20science#Disputed)
 
 Lots of folks have written in the past about the distinction between computer science and programming. A comment on Twitter reminded me of this again, but in an odd direction: the commenter expressed some dissatisfaction about having to learn some of the *history* of computer science while learning to program. 
 
