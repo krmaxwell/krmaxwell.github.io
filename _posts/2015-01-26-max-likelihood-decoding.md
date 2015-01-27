@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Maximum likelihood decoding in Python"
-date: 2015-01-27 08:30:00 -0600
 categories: [Programming, Python, Math]
 ---
 
