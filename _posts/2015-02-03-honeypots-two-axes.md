@@ -11,11 +11,9 @@ When deploying a honeypot or analyzing the data from it, we should also think ab
 One doesn't matter more than the other. These are orthogonal axes. And the choices we make on each spectrum depend almost entirely on your goals for the project and the resources you can allocate. Broadly-targeted, high-interaction honeypots require an entirely different approach than narrow-targeted (internal) low-interaction honeypots. They also provide wildly different sorts of data and you'll take different actions.
 
 
-|                     | High Interaction | Low Interaction         |
-|---------------------|------------------|-------------------------|
-|**Broad targeting**  | Danger zone      | Many community projects |
+|                 | **High Interaction** | **Low Interaction**     |
+|---------------------|:------------------|:-------------------------|
+|**Broad targeting**  | Difficult        | Many community projects |
 |**Narrow targeting** | Active defense   | Internal monitoring     |
 
-- How to decide
-- Things to keep in mind
-- Ideas to get started
+The scope of a honeypot deployment depends greatly on the goals of the project. Available resources also matter greatly. Generally speaking, broadly-targeted honeypots provide unfocused data for general situational awareness. However, those with a more narrow focus allow an organization to increase their capabilities for intelligence-driven response.
