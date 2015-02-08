@@ -15,3 +15,5 @@ One doesn't matter more than the other. These are orthogonal axes. And the choic
 The scope of a honeypot deployment depends greatly on the goals of the project. Available resources also matter greatly. Generally speaking, broadly-targeted honeypots provide unfocused data for general situational awareness. However, those with a more narrow focus allow an organization to increase their capabilities for intelligence-driven response.
 
 Deployments should consider the risk as well. In the case of honeypots, we need to think about the possibility that an attacker could break out of the environment into the underlying system. This applies to any network-accessible service, but in this case the risk increases proportionally to the (intentionally) increased threat. Additional controls like system hardening and monitoring can mitigate this to an extent. The specifics largely depend on the actual honeypot platform in use.
+
+When planning a deployment, consider the scope and focus of the intended data collection. Interaction level and targeting should serve the overall goals of the operation, whether for general awareness & research or for intelligence-driven response.
