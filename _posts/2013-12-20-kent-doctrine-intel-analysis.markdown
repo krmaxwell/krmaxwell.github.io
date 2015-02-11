@@ -3,7 +3,7 @@ layout: post
 title: "Kent Doctrine for security intel analysis"
 date: 2013-12-20 23:02:17 -0600
 comments: true
-categories: [Security, Intel]
+categories: Security, Intel
 ---
 
 I’ve said before that log management matters, but **log analysis matters more**. Extracting and communicating useful information (analysis) requires collecting and storing your security data as well as processing the data quickly. But having all the data available won’t matter to anybody except auditors if you don’t use it in ways that inform good decisions. [Mike Rothman](https://twitter.com/securityincite) of Securosis expressed this exceptionally well in his [preview of the 2012 RSA Conference](https://securosis.com/blog/rsa-conference-2012-guide-key-themes):

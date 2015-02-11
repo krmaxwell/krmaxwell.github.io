@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Maximum likelihood decoding in Python"
-categories: [Programming, Python, Math]
+categories: Programming, Python, Math
 ---
 
 In fulfillment of one of my [2015 goals]({% post_url 2015-01-14-tech-goals-for-2015 %}), I started reading [A Book of Abstract Algebra](http://www.amazon.com/gp/product/0486474178/) by [Charles Pinter](http://charlespinter.com) this year. [Reading a math book](http://math.stackexchange.com/questions/279079/how-to-read-a-book-in-mathematics) isn't the same as reading most prose. You have to engage with the text in a different way, **doing** at least as much as **reading**. Among other things, many books include much of their content in the exercises. *Pinter* definitely is one of those books.

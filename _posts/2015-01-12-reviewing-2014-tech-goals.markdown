@@ -2,7 +2,7 @@
 layout: post
 title: "Reviewing 2014 tech goals"
 date: 2015-01-12 21:48:00 -0600
-categories: [Programming, Meta]
+categories: Programming, Meta
 ---
 
 A little over a year ago, I wrote about my [tech goals for 2014](/2013/12/29/2014-tech-goals/). Before writing new ones, I should review how things went last year.

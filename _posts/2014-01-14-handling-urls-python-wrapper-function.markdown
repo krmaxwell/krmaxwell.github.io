@@ -3,7 +3,7 @@ layout: post
 title: "Handling URLs in Python with a wrapper function"
 date: 2014-01-14 22:24:46 -0600
 comments: true
-categories: [Programming, Python]
+categories: Programming, Python
 ---
 
 Now for a break from Project Euler... In my projects, I find myself frequently retrieving URLs from various servers. Sometimes I need to call a REST API endpoint and other times I need to scrape a site. And like a lot of programmers, I don't like to rewrite code. So originally, in [Maltrieve](https://github.com/technoskald/maltrieve), I wrote a function called `get_URL()` that wrapped calls to `urllib2.urlopen()` so I didn't have to repeat the error handling every time. It [sucked](https://github.com/technoskald/maltrieve/blob/b75dbe5d70aab97928648159d92ccdd2596b1d1c/malutil.py#L6).
