@@ -3,7 +3,7 @@ layout: post
 title: "2014 Tech goals"
 date: 2013-12-29 14:37:38 -0600
 comments: true
-categories: [Programming, Meta]
+categories: Programming, Meta
 ---
 
 While the calendar will flip in a few days, I've had some time off and and naturally have spent some time thinking about the future. What do I want to learn and improve in my technical skills over the next year or so? Most of the following can be summed up in two "meta goals": **write more code** and **get back to math and computer science.**
