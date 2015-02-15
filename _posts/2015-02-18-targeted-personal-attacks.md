@@ -13,10 +13,14 @@ If advice to individuals is based on hardening their defenses just enough not to
 
 As a more concrete example, think about the threat models of stalkers, abusers, or harassers. In these types of cases, victims find themselves with entirely different types of impact. Sometimes that means financial losses, like fraud or flat-out theft. All too often, it leads to physical trauma and [emotional abuse][2] or even murder.
 
-Targeted attacks from relative "insiders" such as intimate partners or family members change the model considerably. The attacker may have unrestricted physical access to a device, know the answer to personal security questions, or coerce the target using other forms of abuse. These factors mean that [typical advice][0] like "choose a strong password" and "avoid open WiFi" does little to help victims.
+Targeted attacks from relative "insiders" such as intimate partners or family members change the model considerably. The attacker may have unrestricted physical access to a device, know the answer to personal security questions, or coerce the target using other forms of abuse. These factors mean that [typical advice][0] like "choose a strong password" and "avoid open WiFi" does little to help victims. In my own experience talking with shelters and counselors, I hear more and more about compromised mobile devices due to these "trusted adversaries". This issue has started to get [mainstream attention][3].
 
-As professionals, though, we have a lot to offer here. We just need to reconsider our threat models against these sorts of adversaries. Smart folks have already done great work in this area. We can find more ways to help with this problem using the tools and skills we already have. I've started trying to catalog the available [resources][1]. 
+As professionals, though, we have a lot to offer here. We just need to reconsider our threat models against these sorts of adversaries. Smart folks have already done [great work][4] in this area. We can find more ways to help with this problem using the tools and skills we already have. I've started trying to catalog the available [resources][1]. 
+
+I'd love to see more of my fellow hackers and infosec professionals doing work in this area. That might mean talking to the staff at a counseling center for abuse victims, or writing & improving guides on mobile security. It might mean educating folks like me who are trying to find ways to help, too. Ping me on [Twitter](https://twitter.com/kylemaxwell) and let's talk about it.
 
   [0]: https://blog.malwarebytes.org/mobile-2/2015/01/keeping-a-secure-mobile-device/
   [1]: http://nnedv.org/resources/safetynetdocs.html
   [2]: https://www.psychologytoday.com/blog/anger-in-the-age-entitlement/200808/effects-emotional-abuse-it-hurts-when-i-love
+  [3]: http://www.npr.org/blogs/alltechconsidered/2014/09/15/346149979/smartphones-are-used-to-stalk-control-domestic-abuse-victims
+  [4]: https://www.youtube.com/watch?v=HgJqhuMUVz4
