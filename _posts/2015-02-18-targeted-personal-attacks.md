@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Targeted personal attacks"
-categories: Security
+categories: Security, Activism
 ---
 
 **Sometimes hackers can do more good in local communities and civil society than agitating about national policy.**
