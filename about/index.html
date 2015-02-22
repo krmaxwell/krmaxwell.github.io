@@ -5,6 +5,7 @@ layout: default
     <article class="module color-3">
             <h1>About Kyle Maxwell</h1>
             <hr>
-	    {% include about.md %}
+	    {% capture about_include %}{% include about.md %}{% endcapture %}
+	    {{ about_include | markdownify }}
     </article>
 </div>
