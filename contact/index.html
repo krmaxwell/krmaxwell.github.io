@@ -5,6 +5,7 @@ layout: default
     <article class="module color-3">
             <h1>Contact</h1>
             <hr>
-            <p>Contact info.</p>
+	    {% capture contact_include %}{% include contact.md %}{% endcapture %}
+	    {{ contact_include | markdownify }}
     </article>
 </div>
