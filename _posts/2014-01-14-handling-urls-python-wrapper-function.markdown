@@ -6,9 +6,9 @@ comments: true
 categories: Programming, Python
 ---
 
-Now for a break from Project Euler... In my projects, I find myself frequently retrieving URLs from various servers. Sometimes I need to call a REST API endpoint and other times I need to scrape a site. And like a lot of programmers, I don't like to rewrite code. So originally, in [Maltrieve](https://github.com/technoskald/maltrieve), I wrote a function called `get_URL()` that wrapped calls to `urllib2.urlopen()` so I didn't have to repeat the error handling every time. It [sucked](https://github.com/technoskald/maltrieve/blob/b75dbe5d70aab97928648159d92ccdd2596b1d1c/malutil.py#L6).
+Now for a break from Project Euler... In my projects, I find myself frequently retrieving URLs from various servers. Sometimes I need to call a REST API endpoint and other times I need to scrape a site. And like a lot of programmers, I don't like to rewrite code. So originally, in [Maltrieve](http://maltrieve.org), I wrote a function called `get_URL()` that wrapped calls to `urllib2.urlopen()` so I didn't have to repeat the error handling every time. It [sucked](https://github.com/krmaxwell/maltrieve/blob/b75dbe5d70aab97928648159d92ccdd2596b1d1c/malutil.py#L6).
 
-Now in a work project, I have the same basic requirement and I brought over that function. But in daily usage, the terribad error handling kept biting me. Also, sometimes I need to set up the request with various parameters (like, say, an API key or a specific user agent string). 
+Now in a work project, I have the same basic requirement and I brought over that function. But in daily usage, the terribad error handling kept biting me. Also, sometimes I need to set up the request with various parameters (like, say, an API key or a specific user agent string).
 
 For the latter requirement, `isinstance()` does the trick. We compare the parameter to the Python type `basestring` because all sorts of subclasses could get used; this mostly matters around Unicode stuff. Otherwise, we make sure the parameter is the proper type of object.
 
@@ -40,4 +40,4 @@ def get_url(orig_request):
         return response
 {% endhighlight %}
 
-I need to backport this to Maltrieve soon, I think. So many projects... Although I have made this code snippet [available as a Gist](https://gist.github.com/technoskald/8430955) for canonical purposes.
+I need to backport this to Maltrieve soon, I think. So many projects... Although I have made this code snippet [available as a Gist](https://gist.github.com/krmaxwell/8430955) for canonical purposes.
