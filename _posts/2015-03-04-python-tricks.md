@@ -53,6 +53,7 @@ Old and busted:
 counts = collections.Counter()
 for each in data:
   counts[each] += 1
+{% endhighlight %}
 
 New hotness:
 {% highlight python %}
