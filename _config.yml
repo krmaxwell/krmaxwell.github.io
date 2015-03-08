@@ -1,13 +1,14 @@
 # Site settings
 name: Kyle Maxwell
-#email: krmaxwell@gmail.com
+email: yourmom@example.com
 description: "So much hacking, so little time"
 # testing only
 #url: http://localhost:4000
 url: "http://xwell.org" # the base hostname & protocol for your site
 twitter: kylemaxwell
-github: krmaxwell 
+github: krmaxwell
 google: KyleMaxwell
+instagram: technoskald
 
 # Build settings
 markdown: redcarpet

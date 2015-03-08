@@ -8,7 +8,7 @@ categories: Programming, Meta
 A little over a year ago, I wrote about my [tech goals for 2014](/2013/12/29/2014-tech-goals/). Before writing new ones, I should review how things went last year.
 
 1. **Submit a solid proposal to speak at DEFCON.** Submitted, accepted, [presented](https://www.youtube.com/watch?v=uMJSOYA9xoM)!
-1. **Complete the [Matasano Crypto Challenges](http://www.matasano.com/articles/crypto-challenges/)** Not completed. I didn't even make as much [progress](https://github.com/technoskald/cryptopals) as I'd like, though I did get some done.
+1. **Complete the [Matasano Crypto Challenges](http://cryptopals.com/)** Not completed. I didn't even make as much [progress](https://github.com/technoskald/cryptopals) as I'd like, though I did get some done.
 1. **Complete at least 100 problems from [Project Euler](http://projecteuler.net), including writeups.** I didn't get 100 done. Despite the README, though, I actually did [complete](https://github.com/technoskald/projecteuler) more than the 17 listed there. Counting my IPython notebooks, I completed 35.
 1. **Build at least one really cool hardware project.** Nope. Nada.
 
