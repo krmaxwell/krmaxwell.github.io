@@ -14,7 +14,7 @@ If you plan to respond to CFPs, I have a little bit of advice to make your propo
 
 > If your approach is to submit to a CFP, then do the research if accepted, you're doing it completely backwards. Stop that. The proper thing to do is start a bunch of research, then when it's decently well along, start submitting it. To be fair, it also depends on the type of talk. a survey or tutorial is different than true research. (from my comments on Twitter)
 
-You should have already made good progress on your research before submitting. Some of it might still need completion, but looking for interesting vulnerabilities or threats or techniques should happen **before** you write up your abstract and response.
+You should have already made good progress on your research before submitting. Some of it might still need completion, but looking for interesting vulnerabilities or threats or techniques should happen **before** you write up your abstract and response. Presenting research at a conference resembles a senior thesis more than it does the term paper you banged out in an all-nighter the night before it was due.
 
 For some things, this doesn't apply as much. Teaching basic techniques requires solid preparation but not research. For other things, it means everything. [Conference-driven development](http://devdriven.by/conference/)] results in an overly-stressed hacker and inferior product.
 
