@@ -12,7 +12,7 @@ If you plan to respond to CFPs, I have a little bit of advice to make your propo
 
 ## Order of operations
 
-> If your approach is to submit to a CFP, then do the research if accepted, you're doing it completely backwards. Stop that.
+> If your approach is to submit to a CFP, then do the research if accepted, you're doing it completely backwards. Stop that. The proper thing to do is start a bunch of research, then when it's decently well along, start submitting it. To be fair, it also depends on the type of talk. a survey or tutorial is different than true research. (from my comments on Twitter)
 
 You should have already made good progress on your research before submitting. Some of it might still need completion, but looking for interesting vulnerabilities or threats or techniques should happen **before** you write up your abstract and response.
 
