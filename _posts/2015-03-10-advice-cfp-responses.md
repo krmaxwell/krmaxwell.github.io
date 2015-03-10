@@ -18,7 +18,7 @@ You should have already made good progress on your research before submitting. S
 
 For some things, this doesn't apply as much. Teaching basic techniques requires solid preparation but not research. For other things, it means everything. [Conference-driven development](http://devdriven.by/conference/)] results in an overly-stressed hacker and inferior product.
 
-Some conferences have ridiculously long lead times (I'm looking at you, RSA). I would never submit new research to that sort of conference, although a snapshot of ongoing study might work well. If many months will elapse between your submission and the actual presentation, try to submit something that doesn't require discovery of new knowledge in the intervening time.
+Some conferences have ridiculously long lead times (I'm looking at you, RSA). I would never submit new research to that sort of conference, although a snapshot of ongoing study might work well. If many months will elapse between your submission and the actual presentation, try to submit something that doesn't require discovery of new knowledge in the intervening time. (Also see the reference to Miessler at the end of this post.)
 
 ## Operator overloading
 
@@ -44,3 +44,4 @@ Different conferences require different levels of detail, of course. Many of the
 - [4 Tips to Get a Conference "Call for Papers" Submission Accepted](http://blog.whitehatsec.com/4-tips-to-get-a-conference-call-for-papers-submission-accepted/) (Jeremiah Grossman)
 - [How do I make my CFP stand out?](https://www.defcon.org/html/links/dc-speakerscorner.html#nikita-cfp) (Nikita)
 - [Create Good Security CFP Responses](http://hexsec.blogspot.com/2012/12/create-good-security-cfp-responses.html) (Nathan Hamiel)
+- [The Hierarchy of Information Security Talks](https://danielmiessler.com/blog/hierarchy-information-security-talks/) (Daniel Miessler)
