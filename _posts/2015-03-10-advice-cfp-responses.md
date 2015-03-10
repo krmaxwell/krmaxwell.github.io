@@ -10,6 +10,8 @@ Over the last few years, I've had the good fortune to present at a number of con
 
 If you plan to respond to CFPs, I have a little bit of advice to make your proposal and presentation stand out.
 
+<a href="http://commons.wikimedia.org/wiki/File:Grace_Hopper_and_UNIVAC.jpg"><img title="Grace Hopper schooling some dudes" src="/assets/images/Grace_Hopper_and_UNIVAC.jpg" align="right"></a>
+
 ## Order of operations
 
 > If your approach is to submit to a CFP, then do the research if accepted, you're doing it completely backwards. Stop that. The proper thing to do is start a bunch of research, then when it's decently well along, start submitting it. To be fair, it also depends on the type of talk. a survey or tutorial is different than true research. (from my comments on Twitter)
