@@ -10,7 +10,7 @@ Over the last few years, I've had the good fortune to present at a number of con
 
 If you plan to respond to CFPs, I have a little bit of advice to make your proposal and presentation stand out.
 
-<a href="http://commons.wikimedia.org/wiki/File:Grace_Hopper_and_UNIVAC.jpg"><img title="Grace Hopper schooling some dudes" src="/assets/images/Grace_Hopper_and_UNIVAC.jpg" align="right"></a>
+<a href="http://commons.wikimedia.org/wiki/File:Grace_Hopper_and_UNIVAC.jpg"><img title="Grace Hopper on a UNIVAC schooling some dudes" alt="Grace Hopper on a UNIVAC schooling some dudes" src="/assets/images/Grace_Hopper_and_UNIVAC.jpg" align="right"></a>
 
 ## Order of operations
 
@@ -39,6 +39,10 @@ Some of them may not take much (e.g. "no special equipment required"). But CFP o
 Related to this: explain what you mean. Leave the mystery for the actual presentation, but not for the questionnaire and abstract. If the selection committee doesn't know what you want to talk about, they will move on to another candidate they can evaluate fairly.
 
 Different conferences require different levels of detail, of course. Many of them just want an abstract and basically choose based on the combination of subject matter and speaker reputation. Others want two abstracts (short and detailed) plus an outline. Personally, I prefer the latter because it forces me to make sure I've done my homework in advance (see above).
+
+## Closing bound
+
+Presenting your research or a solid explanation of little-understood techniques can mean real benefits for the attendees and for your own career. I don't just mean that in terms of publicity, either: forcing yourself to get the material in shape to show it to others means you understand it that much better yourself, too. If you put in the effort, it will pay off.
 
 ## External references
 
