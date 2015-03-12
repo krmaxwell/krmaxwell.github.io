@@ -14,6 +14,8 @@ So [@da_667](https://twitter.com/da_667) started a thread [on Twitter](https://t
 In the ensuing discussion, [@stauken](https://twitter.com/stauken) made a [D&D alignment reference](https://twitter.com/stauken/status/576132190813057024):
 > so what you're saying is, lawful evil exists for a reason
 
+<img src="/assets/images/dnd-movies.jpg" alt="D&D alignments from movies" />
+
 As often happens among geeks, this led to a wild and fast-moving discussion about D&D alignments. One of my favorite sites for this sort of discussion is [EasyDamus](http://www.easydamus.com/alignment.html). For those of you not familiar with this system, imagine your "ethical" alignment along two axes: **Good vs Evil** and **Law vs Chaos**. For "law", you can mentally substitute "order", since it has more to do with with honor and adherence to rules than what we think of as "law" in our society.
 
 Conversely, in hacking tradition, we often refer to the color of "hats" along a simpler one-dimensional axis, "white" to "grey" to "black". "White hat hackers" are envisioned as Lawful Good [LG], "black hat hackers" as some form of evil (usually Neutral Evil [NE]), and "grey hats" as something else like "chaotic good" [CG]. The referenced material here comes from old Western movies where you could tell if a gunslinger or sheriff or bandit or whomever was a "good guy" or "bad guy" based on the color of their hats.
@@ -57,3 +59,7 @@ NE would log into the server and destroy it, or at least their own information. 
 ### Chaotic Evil
 
 CE realizes that the server contains valuable data that they could use for their own benefit. They might subtly corrupt the information on the server after copying it themselves, then use it for financial gain or even to compromise the other victims themselves for additional gain.
+
+## Back to the hats
+
+A more detailed system of alignment reveals the possibility for much more nuance. Importantly, almost no one sees themselves as "evil". EasyDamus includes a discussion of [real-world alignments](http://www.easydamus.com/alignmentreal.html) that could be useful here.
