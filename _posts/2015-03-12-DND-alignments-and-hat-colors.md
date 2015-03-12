@@ -22,7 +22,7 @@ Conversely, in hacking tradition, we often refer to the color of "hats" along a 
 
 In the latter case, then, that depends very much on the perspective of the viewer. For the simplest example, think about how, say, your average US and PRC citizens might think about the [NSA TAO](http://en.wikipedia.org/wiki/Tailored_Access_Operations) versus [PLA Unit 61398](http://en.wikipedia.org/wiki/PLA_Unit_61398). "Our guys are good, theirs are bad" sums up the sentiments of most people.
 
-So returning to the original scenario, let's look at how different alignments might react.
+So returning to the original scenario, let's look at how different alignments might react. If you think of better ways to characterize these, please by all means [ping me on Twitter](https://twitter.com/kylemaxwell)!
 
 ### Lawful Good
 
