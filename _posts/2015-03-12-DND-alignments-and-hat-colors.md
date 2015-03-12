@@ -13,4 +13,32 @@ In the ensuing discussion, [@stauken](https://twitter.com/stauken) made a [D&D a
 
 As often happens among geeks, this led to a wild and fast-moving discussion about D&D alignments. One of my favorite sites for this sort of discussion is [EasyDamus](http://www.easydamus.com/alignment.html). For those of you not familiar with this system, imagine your "ethical" alignment along two axes: **Good vs Evil** and **Law vs Chaos**. For "law", you can mentally substitute "order", since it has more to do with with honor and adherence to rules than what we think of as "law" in our society.
 
-Conversely, in hacking tradition, we often refer to the color of "hats" along a simpler one-dimensional axis, "white" to "grey" to "black". "White hat hackers" are envisioned as Lawful Good [LG], "black hat hackers" as some form of evil (usually Neutral Evil [NE]), and "grey hats" as something else like "chaotic good" [CG].
+Conversely, in hacking tradition, we often refer to the color of "hats" along a simpler one-dimensional axis, "white" to "grey" to "black". "White hat hackers" are envisioned as Lawful Good [LG], "black hat hackers" as some form of evil (usually Neutral Evil [NE]), and "grey hats" as something else like "chaotic good" [CG]. The referenced material here comes from old Western movies where you could tell if a gunslinger or sheriff or bandit or whomever was a "good guy" or "bad guy" based on the color of their hats.
+
+In the latter case, then, that depends very much on the perspective of the viewer. For the simplest example, think about how, say, your average US and PRC citizens might think about the [NSA TAO](http://en.wikipedia.org/wiki/Tailored_Access_Operations) versus [PLA Unit 61398](http://en.wikipedia.org/wiki/PLA_Unit_61398). "Our guys are good, theirs are bad" sums up the sentiments of most people.
+
+So returning to the original scenario, let's look at how different alignments might react.
+
+## Lawful Good
+
+LG would not use the credentials and log into the server because that would appear _prima facie_ illegal in most jurisdictions. However, they might contact law enforcement or share that information (threat intelligence) with appropriate network security teams in other organizations so that they can check for possible indicators of compromise.
+
+## Neutral Good
+
+NG **might** log in to see if the server contains additional exfiltrated data. Likely, however, they'd consult with their legal counsel and otherwise follow the same course as LG in this particular scenario.
+
+## Chaotic Good
+
+CG would not care much about the law in this situation. They would log into the server, exfiltrate the data, and use it to notify other victims. However, they would not use those data for their own selfish benefit. They might even go a step further and take some action to shut down the server or expose the attacker.
+
+## Lawful Neutral
+
+LN generally follows LG in this scenario. They might be slightly less likely to notify other groups, however, as they'd focus their concern on their own defensive responsibilities.
+
+## True Neutral
+
+TN (or just N) would possibly not do anything. However, it depends on which type of N they identify as. "Undecided" would simply secure their systems and move onto the next incident. The type of neutral who tries to maintain balance between law & order and good & evil might log into the server and try to determine where the balance of power lies (e.g. is the information from inexpert regular people or powerful organizations?) before making a decision.
+
+## Chaotic Neutral
+
+CN doesn't care. They log in and replace all the exfiltrated data with copies of _Paradise Lost_. Like their "Good" counterparts, they might expose the attacker to others - but for fun rather than to stop them.
