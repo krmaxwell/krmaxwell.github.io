@@ -1,4 +1,10 @@
-Guest blogger and broham extraordinaire give him a shout on twitter [@bfist](https://twitter.com/bfist)
+---
+layout: post
+title: "The Breach Dodecahedron"
+categories: Security, Guest Blog
+---
+
+_This post was written by guest blogger and broham extraordinaire [Kevin "@bfist" Thompson](https://twitter.com/bfist). For more ramblings on risk management and pro wrestling, go follow him!_
 
 I spend a lot of my time reading breach reports for publicly disclosed incidents
 or reading reports from forensic organizations about security breaches. A while
