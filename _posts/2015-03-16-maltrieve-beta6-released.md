@@ -1,0 +1,11 @@
+---
+layout: post
+title: "Maltrieve v0.6 released"
+categories: Security
+---
+
+Last night, I released [Maltrieve](http://maltrieve.org) [v0.6 (beta 6)](https://github.com/krmaxwell/maltrieve/releases/tag/v0.6). We now use [setuptools](https://pythonhosted.org/setuptools/setuptools.html) to handle installation. This release also includes some bug fixes and the addition of ZeusTracker as a source.
+
+Users should keep in mind that this is free software (open source). That means that project improvements largely come from the community, either by helping test (and thus track down pesky bugs) or contributing code & documentation. Students, researchers, and new programmers can all help in their own ways and I will happily review any pull requests.
+
+The next version will focus on improved engineering. That means not to expect a lot of new features (unless someone else writes them), but hopefully better code quality.
