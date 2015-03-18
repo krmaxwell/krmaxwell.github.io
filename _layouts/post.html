@@ -6,6 +6,7 @@ layout: default
 
     <article class="module color-3">
         <h1>{{ page.title }}{{ .shortUrl }}</h1>
+        <h3>{{ page.date | date: "%Y-%m-%d" }}</h3>
         <hr>
         {{ content }}
         <p class="top"><small><a href="#top">[top]</a></small></p>
@@ -52,6 +53,3 @@ layout: default
 {% endif %}
 
 </div>
-
-
-
