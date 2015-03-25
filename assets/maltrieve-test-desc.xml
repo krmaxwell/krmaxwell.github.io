@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<rss version="2.0">
+<channel>
+	<title>Maltrieve XML List testing</title>
+	<link>http://xwell.org/assets/maltrieve-test-list.xml</link>
+	<description>Test parsing of XML lists</description>
+	<language>en</language>
+	<docs>http://www.rssboard.org/rss-specification</docs>
+<item>
+	<description>http://example.org/mylist</description>
+</item>
+<item>
+	<description>http://example.com/yourlist</description>
+</item>
+<item>
+	<description>http://example.org/mylist</description>
+</item>
+</channel>
+</rss>
