@@ -1,8 +1,10 @@
 ---
 layout: post
-title: "Data sets in Python"
+title: "Python tricks: counting"
 categories: Python, Programming
 ---
+
+_first in an occasional series_
 
 Last year, my buddy [Kevin Thompson](https://twitter.com/bfist) and I submitted a talk to Pycon 2015. It didn't get accepted, so I thought I'd write a few blog posts with some of the material.
 
