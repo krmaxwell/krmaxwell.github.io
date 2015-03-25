@@ -8,13 +8,16 @@ Last year, my buddy [Kevin Thompson](https://twitter.com/bfist) and I submitted 
 
 Python has a lot of data types that make working with data sets a real pleasure.
 
-- collections.Counter
 - dict.get
 - list comprehensions
 
-Use case: count objects (e.g. strings)
+## [collections.Counter](https://docs.python.org/2/library/collections.html#collections.Counter)
 
-Old and busted:
+### Use case: count objects (e.g. strings)
+
+So imagine you're processing some data and you want to count how often you see certain objects (like strings in a list). This gets unwieldy quickly, especially if you have additional associated logic. But `collections.Counter()` provides a handy Pythonic way to implement this pattern.
+
+### Old and busted
 
 {% highlight python %}
 counts = dict()
@@ -25,37 +28,30 @@ for each in data:
     counts[each] =1
 {% endhighlight %}
 
-New hotness:
+### New hotness
+
 {% highlight python %}
 counts = collections.Counter()
 for each in data:
   counts[each] += 1
 {% endhighlight %}
 
-Use case: nested data structures
+## [List comprehensions](https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions)
 
-Old and busted:
-{% highlight python %}
-if 'foo' in data and 'bar' in data['foo'] and 'baz' in data['foo']['bar']:
-  stuff(data['foo']['bar']['baz'])
-{% endhighlight %}
+### Use case: simple for loop
 
-New hotness:
-{% highlight python %}
-if data.get('foo', '').get('bar', '').get('baz', ''):
-  stuff(data['foo']['bar']['baz'])
-{% endhighlight %}
+We can simplify this even further with a _list comprehension_. In general, you place a `for` loop inside a pair of square brackets, with the expression for each result at the beginning.
 
-Use case: simple for loop
+### Old and busted:
 
-Old and busted:
 {% highlight python %}
 counts = collections.Counter()
 for each in data:
   counts[each] += 1
 {% endhighlight %}
 
-New hotness:
+### New hotness:
+
 {% highlight python %}
 [counts[each]+=1 for each in data]
 {% endhighlight %}
