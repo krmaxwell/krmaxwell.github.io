@@ -16,3 +16,9 @@ This model uses two primary branches: `master`, which must always be deployable 
 ## Community implementations
 
 When implementing this flow in community-development projects (such as open source software), we have to take a few steps. Github will show a link to a [contributor guide](https://github.com/blog/1184-contributing-guidelines) on all issue and pull request pages. The guidelines document should explain this flow, as well as any other considerations (such as licensing and coding standards). Contributors should generally issue pull requests against the `development` branch, for example.
+
+## Pre-commit
+
+The smart folks over at [Yelp](http://www.yelp.com) have a fun tool called [pre-commit](http://pre-commit.com). This tool uses [git hooks](http://githooks.com) to run a few scripts before committing code, even locally. This primarily should include code linters, although in some organizations some level of testing may also run here.
+
+For an example, take a look at the [pre-commit configuration file for Maltrieve](https://github.com/krmaxwell/maltrieve/blob/3f6fdcc3c8d139dbab3c5153efc95f65b8f30251/.pre-commit-config.yaml). This runs a few scripts to format my code according to [PEP8](https://www.python.org/dev/peps/pep-0008/), check any JSON and YAML files, etc. While slavish adherence to PEP8 can create problems, in general it will result in more readable and standard code. Other languages have similar tools and linters available.
