@@ -32,3 +32,22 @@ I remember trying test-driven development a decade ago, and for whatever reason 
 Now that I have tests, I can start carrying out continuous integration. This means I have automated testing running that gives me a result before I merge it back to `master` (or even `development`). GitHub handles all of my projects and has great support for CI tools. At the moment, Travis CI and CircleCI have my attention. In both cases, developers can log into the tools with their GitHub accounts and specify which repositories to check. CircleCI has some basic support for getting started automatically, but taking proper advantage of either tool will require a small, straightforward configuration file written in YAML.
 
 After testing both extensively, I chose to stick with CircleCI. Both offer free testing for open-source projects (by which they seem to mean "public repositories"), but CircleCI has a little lower pricing than Travis CI for private repositories or closed-source projects. I also liked how the UI integrates a little more with GitHub, making it easy to check on a pull request, branch, or commit right from its interface. Both provide solid options, though, and for many people Travis CI may actually be the right choice.
+
+## Test Coverage
+
+Getting those green check marks when all tests pass gives a great feeling. But if the tests only handle a small amount of code, then the probability increases that things have broken and nobody knows it. [Code coverage](http://martinfowler.com/bliki/TestCoverage.html) tools measure how much code actually gets exercised by tests. (Note the distinction between that and how much code gets tested **well**.) For _py.test_, I use a plugin called, obscurely enough, [_pytest-cov_](https://pypi.python.org/pypi/pytest-cov). This outputs a little table after the tests run:
+
+```
+-------------------- coverage: platform linux2, python 2.6.4-final-0 ---------------------
+Name                 Stmts   Miss  Cover
+----------------------------------------
+myproj/__init__          2      0   100%
+myproj/myproj          257     13    94%
+myproj/feature4286      94      7    92%
+----------------------------------------
+TOTAL                  353     20    94%
+```
+
+Percentages on my projects have not climbed to where I would like them, but they've increased from 0%.
+
+For seeing automated results, [Coveralls](https://coveralls.io) integrates well with both of the CI tools listed above. In CircleCI, just add some environment variables so that API keys don't have to go into a public repository. (In this area, Travis CI probably integrates a little better with Coveralls.)
