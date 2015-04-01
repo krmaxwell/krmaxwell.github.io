@@ -54,32 +54,29 @@ Percentages on my projects have not climbed to where I would like them, but they
 
 For seeing automated results, [Coveralls](https://coveralls.io) integrates well with both of the CI tools listed above. In CircleCI, just add some environment variables so that API keys don't have to go into a public repository. (In this area, Travis CI probably integrates a little better with Coveralls.)
 
-## Releases and tags
+## Releases
 
-- https://help.github.com/articles/creating-releases/
-- https://help.github.com/articles/about-releases/
-- http://git-scm.com/book/en/v2/Git-Basics-Tagging#Lightweight-Tags (releases are actually these)
+Eventually software has to be released. GitHub allows project maintainers to [create releases](https://help.github.com/articles/creating-releases/). This applies a [lightweight tag](http://git-scm.com/book/en/v2/Git-Basics-Tagging#Lightweight-Tags) and also allows a download of the code as a snapshot. GitHub also will serve binaries (e.g. compiled code). At one time I used a nonstandard sequential system like "beta1" and "beta2", but I've since moved to things like "v0.3" instead. Not only does it allow for more granularity, it also works well with different sorts of tools like PyPI and whatnot. Other than this, I haven't found a good use for tags.
 
 ## Kanban
 
-- https://waffle.io
-- https://trello.com
+The Kanban approach, originally developed for manufacturing processes, can apply to task management too. I've used a version of it for personal productivity in past jobs, including offline versions (a white board with actual sticky notes). [Waffle](https://waffle.io) provides a very lightweight interface to GitHub issues, including synchronizing state and comments with issue and pull requests plus filters on milestones and such. [Trello](https://trello.com) is probably better-known for general Kanban usage, but by itself doesn't directly integrate with GitHub to my knowledge.  A number of other add-ons can help with this, such as connecting them with [IFTTT](https://ifttt.com) or [Zapier](https://zapier.com). For a similar tool that doesn't use the Kanban methodology, I've heard great things about [Asana](https://asana.com).
 
 ## Further reading
 
 - Flow:
     - http://scottchacon.com/2011/08/31/github-flow.html
     - https://github.com/nvie/gitflow
-    - http://lucamezzalira.com/2014/03/10/git-flow-vs-github-flow/
-- Code quality:
-    - http://stackoverflow.com/questions/405243/how-do-we-define-code-quality
+- [Git Flow vs GitHub Flow](http://lucamezzalira.com/2014/03/10/git-flow-vs-github-flow/)
+- [How do we define code quality? (Stack Overflow thread)](http://stackoverflow.com/questions/405243/how-do-we-define-code-quality)
 - Testing:
     - http://docs.python-guide.org/en/latest/writing/tests/
     - http://artofunittesting.com
-- Continuous Integration:
     - http://blog.assembla.com/AssemblaBlog/tabid/12618/bid/92411/Continuous-Delivery-vs-Continuous-Deployment-vs-Continuous-Integration-Wait-huh.aspx
     - http://blogs.atlassian.com/2014/04/practical-continuous-deployment/
 - Test coverage:
     - http://martinfowler.com/bliki/TestCoverage.html
+- [About Releases](https://help.github.com/articles/about-releases/)
+- [Semantic Versioning](http://semver.org)
 - Kanban:
     - http://kanbanblog.com/explained/
