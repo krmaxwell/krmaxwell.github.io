@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Open Source Release Engineering"
+title: "Open Source Software Engineering"
 categories: Programming
 ---
 
