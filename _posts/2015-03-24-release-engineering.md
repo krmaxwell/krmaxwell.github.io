@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Release Engineering"
+title: "Open Source Release Engineering"
 categories: Programming
 ---
 
-In the process of 'leveling up' as a programmer, I have started trying to implement some basic software engineering concepts. This post serves as a way for me to organize my own thoughts as I learn.
+In the process of 'leveling up' as a programmer, I have started trying to implement some basic software engineering concepts. This post serves as a way for me to organize my own thoughts as I learn. It focuses primarily on open-source methodologies, but of course the core lessons themselves apply in any environment.
 
 ## Basic flow
 I've used the [Github Flow](https://guides.github.com/introduction/flow/) for quite a while for lots of things (recently including [this blog](https://github.com/krmaxwell/krmaxwell.github.io)). But this mostly applies to processes that use continuous deployment, like Github itself. It can also work pretty well for documentation and other similar projects that don't need the concept of "releases".
@@ -17,7 +17,7 @@ This model uses two primary branches: `master`, which must always be deployable 
 
 When implementing this flow in community-development projects (such as open source software), we have to take a few steps. Github will show a link to a [contributor guide](https://github.com/blog/1184-contributing-guidelines) on all issue and pull request pages. The guidelines document should explain this flow, as well as any other considerations (such as licensing and coding standards). Contributors should generally issue pull requests against the `development` branch, for example.
 
-## Pre-commit
+## Code quality
 
 The smart folks over at [Yelp](http://www.yelp.com) have a fun tool called [pre-commit](http://pre-commit.com). This tool uses [git hooks](http://githooks.com) to run a few scripts before committing code, even locally. This primarily should include code linters, although in some organizations some level of testing may also run here.
 
@@ -37,7 +37,7 @@ After testing both extensively, I chose to stick with CircleCI. Both offer free 
 
 ## Test Coverage
 
-Getting those green check marks when all tests pass gives a great feeling. But if the tests only handle a small amount of code, then the probability increases that things have broken and nobody knows it. [Code coverage](http://martinfowler.com/bliki/TestCoverage.html) tools measure how much code actually gets exercised by tests. (Note the distinction between that and how much code gets tested **well**.) For _py.test_, I use a plugin called, obscurely enough, [_pytest-cov_](https://pypi.python.org/pypi/pytest-cov). This outputs a little table after the tests run:
+Getting those green check marks when all tests pass gives a great feeling. But if the tests only handle a small amount of code, then the probability increases that things have broken and nobody knows it. Code coverage tools measure how much code actually gets exercised by tests. (Note the distinction between that and how much code gets tested **well**.) For _py.test_, I use a plugin called, obscurely enough, [_pytest-cov_](https://pypi.python.org/pypi/pytest-cov). This outputs a little table after the tests run:
 
 ```
 -------------------- coverage: platform linux2, python 2.6.4-final-0 ---------------------
@@ -53,3 +53,33 @@ TOTAL                  353     20    94%
 Percentages on my projects have not climbed to where I would like them, but they've increased from 0%.
 
 For seeing automated results, [Coveralls](https://coveralls.io) integrates well with both of the CI tools listed above. In CircleCI, just add some environment variables so that API keys don't have to go into a public repository. (In this area, Travis CI probably integrates a little better with Coveralls.)
+
+## Releases and tags
+
+- https://help.github.com/articles/creating-releases/
+- https://help.github.com/articles/about-releases/
+- http://git-scm.com/book/en/v2/Git-Basics-Tagging#Lightweight-Tags (releases are actually these)
+
+## Kanban
+
+- https://waffle.io
+- https://trello.com
+
+## Further reading
+
+- Flow:
+    - http://scottchacon.com/2011/08/31/github-flow.html
+    - https://github.com/nvie/gitflow
+    - http://lucamezzalira.com/2014/03/10/git-flow-vs-github-flow/
+- Code quality:
+    - http://stackoverflow.com/questions/405243/how-do-we-define-code-quality
+- Testing:
+    - http://docs.python-guide.org/en/latest/writing/tests/
+    - http://artofunittesting.com
+- Continuous Integration:
+    - http://blog.assembla.com/AssemblaBlog/tabid/12618/bid/92411/Continuous-Delivery-vs-Continuous-Deployment-vs-Continuous-Integration-Wait-huh.aspx
+    - http://blogs.atlassian.com/2014/04/practical-continuous-deployment/
+- Test coverage:
+    - http://martinfowler.com/bliki/TestCoverage.html
+- Kanban:
+    - http://kanbanblog.com/explained/
