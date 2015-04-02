@@ -10,7 +10,8 @@ Last year, my buddy [Kevin Thompson](https://twitter.com/bfist) and I submitted 
 
 When we started working with Python, like a lot of folks, we went through a few code tutorials and then immediately got to work writing **ROCK SOLID PRODUCTION CODE.** Well, we immediately started writing code, anyway. Along the way, we learned some tricks the hard way. This series explores a few of those tricks. Advanced programmers will already know most of these, but hopefully newer programmers will learn a few things that can make their lives a bit easier.
 
-Python has a lot of data types that make working with data sets a real pleasure. Some specific analysis work, though, can occasionally get a little wonky. And so clever programmers have made our lives even easier by implementing features that keep the simple things simple.
+<img src="/assets/images/dooku.jpg" align="right" alt="count dooku also loves to count" />
+Python has a lot of data types that make working with data sets a real pleasure. Some specific analysis work, though, can occasionally get a little wonky. And so clever programmers have made our lives even easier by implementing features that keep the simple things simple: specifically, **counting**.
 
 ## [collections.Counter](https://docs.python.org/2/library/collections.html#collections.Counter)
 
