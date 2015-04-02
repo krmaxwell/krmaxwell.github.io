@@ -4,4 +4,5 @@
 - Google+: [+KyleMaxwell](https://plus.google.com/+{{ site.google }}/)
 - Twitter: [@kylemaxwell](https://twitter.com/{{ site.twitter }})
 - Instagram: [technoskald](https://instagram.com/{{ site.instagram }})
+- Keybase: [kylemaxwell](https://keybase.io/kylemaxwell)
 - PGP: 4C8F A2D4 E91E 5064

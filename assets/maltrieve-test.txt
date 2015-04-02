@@ -1,0 +1,4 @@
+# test
+http://example.org/mylist
+http://example.com/yourlist
+http://example.org/mylist
