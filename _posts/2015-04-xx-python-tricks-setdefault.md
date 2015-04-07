@@ -116,3 +116,12 @@ from addict import Dict
 incident = Dict()
 incident.action.hacking.setdefault('variety', []).append("Brute force")
 ```
+
+So to sum up: use `dict.get()` when you want to safely reference a key that
+might not exist and you don't want to change the dictionary. Use
+`dict.setdefault()` when you want to safely reference a key and you *DO* want to
+change the dictionary, and use `addict` when you want to make a defaultdict of
+defaultdicts all the way down. Working with dictionaries can be a trying
+experience, especially for people that are new to programming. Study these
+tricks and you can make your code more readable and maybe even learn to love
+dictionaries.
