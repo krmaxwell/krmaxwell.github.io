@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
 gem 'jekyll'
-gem 'html-proofer'
+gem 'html-proofer', '>=2.1.0'
