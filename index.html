@@ -20,10 +20,8 @@ layout: default
         <span class="page_number">&mdash; {{ paginator.page }} of {{ paginator.total_pages }} &mdash;</span>
 
         {% if paginator.next_page %}
-            <a href="{{ site.url }}{{ paginator.next_page_path }}" class="next">Next</a>
+            <a href="{{ paginator.next_page_path }}" class="next">Next</a>
         {% endif %}
     </div>
 
 </section>
-
-
