@@ -9,3 +9,7 @@ One of the most popular and enduring forms of mystery fiction is the [_whodunit_
 ## Case Studies
 ### Sony and DPRK
 ### GitHub and China
+## External reading
+
+- http://www.simonganiere.ch/2014/12/28/attribution-of-cyber-attack/
+- http://espionageware.blogspot.com/2014/04/apt-attributions-and-dns-profiling.html
