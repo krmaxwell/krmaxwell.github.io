@@ -51,3 +51,4 @@ Presenting your research or a solid explanation of little-understood techniques 
 - [How do I make my CFP stand out?](https://www.defcon.org/html/links/dc-speakerscorner.html#nikita-cfp) (Nikita)
 - [Create Good Security CFP Responses](http://hexsec.blogspot.com/2012/12/create-good-security-cfp-responses.html) (Nathan Hamiel)
 - [The Hierarchy of Information Security Talks](https://danielmiessler.com/blog/hierarchy-information-security-talks/) (Daniel Miessler)
+- [Dry Runs](https://lists.immunityinc.com/pipermail/dailydave/2015-April/000915.html) (Dave Aitel) _added later_
