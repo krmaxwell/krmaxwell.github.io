@@ -26,3 +26,4 @@
 ## 2015
 - [SANS CTI Summit 2015](http://www.sans.org/event/cyber-threat-intelligence-summit-2015) - "[The Most Dangerous Game: Hunting Adversaries Across the Internet](https://speakerdeck.com/sroberts/the-most-dangerous-game)"
 - [RSA Conference Expo 2015](https://www.rsaconference.com/events/us15/agenda/sessions/1929/know-your-adversary-gathering-intelligence-on) - "Know Your Adversary"
+- [PyData Dallas](http://pydata.org/dal2015/schedule/#26) - "[Using Python to Fight Cybercrime](https://speakerdeck.com/krmaxwell/using-python-to-fight-cybercrime)"
