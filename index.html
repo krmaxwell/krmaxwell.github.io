@@ -8,6 +8,7 @@ layout: default
         <article class="module color-3">
                 <h2><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
                 <span class="category">{{ post.categories }}</span>
+                <span class="date">{{ post.date | date: "%Y-%m-%d" }}</span>
                 <p>{{ post.excerpt | strip_html | truncate: 250 }}</p>
         </article>
     {% endfor %}
