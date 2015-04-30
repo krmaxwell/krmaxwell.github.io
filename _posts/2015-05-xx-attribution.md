@@ -6,7 +6,7 @@ categories: Security
 
 One of the most popular and enduring forms of mystery fiction is the [_whodunit_](http://en.wikipedia.org/wiki/Whodunit). Readers and audiences love following along and trying to determine the actual identity of the attacker based on the clues and observations provided. During and after incident investigations, many folks from the actual investigators on the case up to the public (armchair DFIR!) tries to figure out the same thing. Unlike "whodunit" fiction, though, we may not have all the information needed or indeed ever get confirmation of the right answer.
 
-For various reasons, infosec people (_especially_ those who don't actually work in incident response) love to mock the idea of "attribution". Some of that is deserved because of the FUD that policymakers and vendors throw around. Some of it is not, and reflects lack of expertise on the part of the commenters.
+For various reasons, infosec people (_especially_ those who don't actually work in incident response) love to mock the idea of "attribution". Some of that is deserved because of the FUD that policymakers and vendors throw around. Some of it is not, and reflects lack of expertise on the part of the [commenters](http://blog.norsecorp.com/2015/03/11/pseudo-threat-intelligence-all-i-want-you-to-know/).
 
 ## What attribution means in DFIR
 
@@ -37,6 +37,8 @@ How those costs increase can vary. Maybe, if you're the FBI, you can go arrest s
 ## Conclusion
 
 Armchair investigation can actually be a useful thought exercise for training and understanding broader context if undertaken as a type of intelligence analysis. But it's just as important to understand what attribution means when carried out by people with the appropriate training and actual information at hand.
+
+If you're interested in discussing this further, please feel free to ping me on [Twitter](https://twitter.com/kylemaxwell) or comment on [GitHub](https://github.com/krmaxwell/krmaxwell.github.io/issues/11).
 
 ## External reading
 
