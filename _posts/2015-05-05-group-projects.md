@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Group projects are awful"
+title: "Professors: stop assigning group projects! (Guest Post)"
 categories: Education
 ---
 
-_NB: [Written] by [Kevin Thompson](https://twitter.com/bfist) on September 2, 2013 and republished with his permission._
+_NB: [Written](https://gist.github.com/blackfist/6419155) by [Kevin Thompson](https://twitter.com/bfist) on September 2, 2013 and republished with his permission._
 
 This week is the start of grad school. Since I'm also working full time I decided to take it easy and only registered for two classes. I know that is a small sample size, but I'm pretty disappointed to learn that both of the classes have a lot of group projects involved in them. And I remember from my time as an undergrad student that (almost) every professor was assigning group projects too. Ugh group projects suck! I had hoped that I would be done with group projets when I left undergrad behind. Collaborative learning: the go-to pedagogy for lazy professors when service learning isn't available for some reason.
 
