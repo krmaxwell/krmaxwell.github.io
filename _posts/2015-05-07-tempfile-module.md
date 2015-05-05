@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python tricks: tempfile"
+title: "Python tricks: tempfile module"
 categories: Security,Python,Programming
 ---
 
@@ -26,7 +26,7 @@ The function returns a tuple with the file descriptor as well as the pathname to
 try:
     fd, temp_path = tempfile.mkstemp(dir=my_dir)
 except OSError:
-    logging.error('Could not open %s for writing' % my_dir)
+    logging.error('Could not write file to %s' % my_dir)
 else:
     os.close(fd)
     os.remove(temp_path)
@@ -41,3 +41,20 @@ Let's walk through this:
 - Remove the file itself.
 
 At this point, your program can proceed to write securely to `my_dir`. Of course, it should still watch for the error condition in #1 above, but you've avoided the cost of that first batch before the program realizes it had a problem.
+
+If you want to use the temporary file for something else (scratch space), you don't have to use the `else` clause as-is. But you still need to close the file descriptor and remove the path before your program exits.
+
+## [mkdtemp()](https://docs.python.org/2/library/tempfile.html#tempfile.mkdtemp)
+
+This function is the sibling of `mkstemp()` but instead creates a temporary directory for whatever you need. Fortunately for us, it's a lot easier to use since we don't have to deal with file descriptors. This is great if your program just needs a temporary workspace to store some files before moving or removing them. The example might look like:
+
+```
+try:
+    temp_path = tempfile.mkdtemp(dir=my_dir)
+except OSError:
+    logging.error('Could not create subdirectory in %s' % my_dir)
+else:
+    os.rmdir(temp_path)
+```
+
+This works almost identically except for the lack of a file descriptor to track and close. 
