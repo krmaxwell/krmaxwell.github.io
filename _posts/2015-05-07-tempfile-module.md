@@ -39,7 +39,7 @@ Let's walk through this:
 
 At this point, your program can proceed to write securely to `my_dir`. Of course, it should still watch for the error condition in #1 above, but you've avoided the cost of that first batch before the program realizes it had a problem.
 
-If you want to use the temporary file for something else (scratch space), you don't have to close the descriptor and remove the path right away. But you will still need to do all that before your program exits.
+If you want to use the temporary file for something else (scratch space), you don't have to close the descriptor and remove the path right away. But you will still need to do all that before your program exits. In that case, consider [`NamedTempFile()`](https://docs.python.org/2.7/library/tempfile.html#tempfile.NamedTemporaryFile).
 
 ## [mkdtemp()](https://docs.python.org/2/library/tempfile.html#tempfile.mkdtemp)
 
@@ -54,3 +54,7 @@ except OSError:
 ```
 
 This works almost identically except for the lack of a file descriptor to track and close. Again, your program can use the temporary directory for a bit and move the `os.rmdir()` call outside the `try`.
+
+## Conclusion
+
+I use this sort of pattern in [Maltrieve](http://maltrieve.org) for checking the archive directory before saving off retrieved malware. If you have suggestions on other use cases, or better ways to do this, I'd love to chat with you on [GitHub](https://github.com/krmaxwell/krmaxwell.github.io/pull/68) or [Twitter](https://twitter.com/kylemaxwell).
