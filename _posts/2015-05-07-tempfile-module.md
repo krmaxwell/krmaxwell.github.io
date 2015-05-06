@@ -25,24 +25,21 @@ The function returns a tuple with the file descriptor as well as the pathname to
 ```
 try:
     fd, temp_path = tempfile.mkstemp(dir=my_dir)
-except OSError:
-    logging.error('Could not write file to %s' % my_dir)
-else:
     os.close(fd)
     os.remove(temp_path)
+except OSError:
+    logging.error('Could not write file to %s' % my_dir)
 ```
 
 Let's walk through this:
 - Wrapping everything in a `try/except` block lets us catch potential exceptions.
 - We assign the variables `fd` and `temp_path` to the tuple returned by the `mkstemp()` call. The `dir` parameter to that call allows us to specify the directory in which we want to test file creation.
+- Close the file descriptor for the open (temporary) file within our program so that the OS doesn't have stale handles hanging around. Then remove the file itself.
 - Watch out for [`OSError`](https://docs.python.org/2/library/exceptions.html#exceptions.OSError). This indicates that we **failed writing the file** to `my_dir` and need to fail gracefully somehow.
-- The `else` clause at the end of a `try/except` block executes when the `try` clause succeeded with no exceptions.
-- Close the file descriptor for the open (temporary) file within our program so that the OS doesn't have stale handles hanging around.
-- Remove the file itself.
 
 At this point, your program can proceed to write securely to `my_dir`. Of course, it should still watch for the error condition in #1 above, but you've avoided the cost of that first batch before the program realizes it had a problem.
 
-If you want to use the temporary file for something else (scratch space), you don't have to use the `else` clause as-is. But you still need to close the file descriptor and remove the path before your program exits.
+If you want to use the temporary file for something else (scratch space), you don't have to close the descriptor and remove the path right away. But you will still need to do all that before your program exits.
 
 ## [mkdtemp()](https://docs.python.org/2/library/tempfile.html#tempfile.mkdtemp)
 
@@ -51,10 +48,9 @@ This function is the sibling of `mkstemp()` but instead creates a temporary dire
 ```
 try:
     temp_path = tempfile.mkdtemp(dir=my_dir)
+    os.rmdir(temp_path)
 except OSError:
     logging.error('Could not create subdirectory in %s' % my_dir)
-else:
-    os.rmdir(temp_path)
 ```
 
-This works almost identically except for the lack of a file descriptor to track and close. 
+This works almost identically except for the lack of a file descriptor to track and close. Again, your program can use the temporary directory for a bit and move the `os.rmdir()` call outside the `try`.
