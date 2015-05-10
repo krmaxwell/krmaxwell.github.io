@@ -18,3 +18,9 @@ permalink: /:year/:month/:day/:title/
 # Solarized
 paginate: 10
 exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile', '/vendor']
+
+# Gems, see https://help.github.com/articles/using-jekyll-plugins-with-github-pages/
+gems:
+- jemoji
+- jekyll-redirect-from
+- jekyll-sitemap
