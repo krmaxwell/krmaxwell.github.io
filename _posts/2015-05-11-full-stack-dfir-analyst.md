@@ -31,4 +31,4 @@ So what does a "full-stack DFIR analyst" look like? Beyond never using that term
 
 ## You left something out!
 
-Yes, I'm sure I did. Some other things we probably need to include might be cryptography, legal processes, and interviewing. But I think the above constitutes a minimum core set of things to know. If you'd like to discuss further, please feel free to [comment on GitHub](https://github.com/krmaxwell/krmaxwell.github.io/issues/71) or [ping me on Twitter](https://twitter.com/kylemaxwell).
+Yes, I'm sure I did. By our nature, we have to be [generalists rather than specialists](http://sroberts.github.io/2015/05/02/imposter-syndrome-in-dfir/#the-jack-of-all-trades-inferiority). Some other things we probably need to include might be cryptography, legal processes, and interviewing. But I think the above constitutes a minimum core set of things to know. If you'd like to discuss further, please feel free to [comment on GitHub](https://github.com/krmaxwell/krmaxwell.github.io/issues/71) or [ping me on Twitter](https://twitter.com/kylemaxwell).
