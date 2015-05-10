@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Full Stack Security Analyst"
+title: "Full Stack DFIR Analyst"
 categories: Career
 ---
 
