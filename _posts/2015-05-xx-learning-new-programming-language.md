@@ -16,3 +16,6 @@ https://twitter.com/matonis/status/597800103643086848
 
 ---
 Compare to how I learned Spanish
+
+---
+http://threepanelsoul.com/comics/2015-05-11-370.png (in `/assets/images` already)
