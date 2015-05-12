@@ -8,7 +8,7 @@ I decided a couple of decades ago that I wanted to speak Spanish beyond the very
 
 This demonstrates a good model for how I learn programming languages. Note, I certainly understand that other people may learn in different ways. The whole issue of learning theory and pedagogy lies well outside my expertise. So I just want to talk about what has worked for me, and hopefully somebody else can get some good ideas they can use out of it.
 
-[![talent](http://threepanelsoul.com/comics/2015-05-11-370.png)](http://threepanelsoul.com/2015/05/11/talent/)
+[![talent](/assets/images/talent-development.png)](http://threepanelsoul.com/2015/05/11/talent/)
 ## Do the Work
 
 There is no shortcut to success in learning. You have to do the work.
@@ -23,4 +23,3 @@ https://twitter.com/matonis/status/597800103643086848
 Instruction for people who already understand code is good (think http://learncodethehardway.org/ not http://www.codecademy.com/learn).
 
 I'm liking [A re-introduction to Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) and [Go by Example](https://gobyexample.com/) for this reason.
-
