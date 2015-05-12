@@ -28,13 +28,23 @@ Personally, I prefer instruction oriented toward people who already understand c
 
 ![face book and study](/assets/images/facebook-study.jpg)
 
-This includes actual study. Learning the [spec](http://golang.org/ref/spec) for whatever language you're using will pay off tremendously in time saved over constantly looking up basic syntax stuff ("how do I write a `for` loop in this one again?"). That has cost me more in time wasted and buggy code than it ever should have. 
+This includes actual study. Learning the [spec](http://golang.org/ref/spec) for whatever language you're using will pay off tremendously in time saved over constantly looking up basic syntax stuff ("how do I write a `for` loop in this one again?"). That has cost me more in time wasted and buggy code than it ever should have.
 
 ## Exercise your knowledge
 
-**Learn through projects and drills, not just reading. Work on this every day, or as close to it as feasible.**
+I remember my dad asking me about how well I understood the language after finishing Spanish II. As an arrogant teenager with an acute case of [Dunning-Kruger syndrome](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect), I thought that I only lacked vocabulary.
 
-https://twitter.com/matonis/status/597800103643086848
-> I'm a fan of project-oriented learning. Design a taks, Google your way out of it until it works.
+![much to learn you still have](/assets/images/yoda-learn.jpg)
 
+But it turns out that answering questions on a test doesn't work the same mental muscles as actual usage. And it also turns out that [idiomatic usage](https://blog.udemy.com/idioms-and-their-meanings/comment-page-1/) matters a lot in any language. So I learned way more through spending time chatting with people, reading newspapers, and watching TV: immersion, in other words.
+
+**Learn through usage: projects and drills, not just reading. Work on this every day, or as close to it as feasible.**
+
+Mike Matonis tweeted some good [advice](https://twitter.com/matonis/status/597800103643086848):
+
+> I'm a fan of project-oriented learning. Design a task, Google your way out of it until it works.
+
+This may remind you a bit of [How to Program (in four easy steps)](https://imgur.com/wOsEq7N), but in this case you should use that "step 2" to learn rather than just fueling step 3 "copy and paste".
+
+_read other people's code_
 [Go by Example](https://gobyexample.com/)
