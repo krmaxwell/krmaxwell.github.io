@@ -8,8 +8,8 @@ I decided a couple of decades ago that I wanted to speak Spanish beyond the very
 
 This demonstrates a good model for learning programming languages.
 
-[![talent](/assets/images/talent-development.png)](http://threepanelsoul.com/2015/05/11/talent/)
 ## Do the work
+[![talent](/assets/images/talent-development.png)](http://threepanelsoul.com/2015/05/11/talent/)
 
 **There is no shortcut to success in learning. You have to do the work.** People love to talk about how much they "want" to learn something, or how they started and got distracted. Somehow they often give the impression that that's almost as good.
 
@@ -20,12 +20,15 @@ Learning a new skill requires time and effort. While [Learn X in Y minutes](http
 Note, I certainly understand that other people may learn in different ways. The whole issue of learning theory and pedagogy lies well outside my expertise. So the rest of this post will just discuss what has worked for me. Hopefully somebody else can get some good ideas they can use out of it.
 
 ## Build your knowledge
+Personally, I prefer instruction oriented toward people who already understand code. I already understand variables and basic logic constructs. At this stage, what matters most is good explanation of syntax (grammar, as it were). For an existing programmer, resources like [Learn Code the Hard Way](http://learncodethehardway.org/) work much better than [Codecademy](http://www.codecademy.com/learn).
 
-Instruction for people who already understand code is good (think http://learncodethehardway.org/ not http://www.codecademy.com/learn).
+"X for Dummies"-styled instruction is a total non-starter for me. I'm not a dummy because I don't know X yet, and neither are you. You are a smart, capable person who wants to learn something new.
 
-I'm liking [A re-introduction to Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) and [Go by Example](https://gobyexample.com/) for this reason.
+[A re-introduction to Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) does a great job of explaining that language with appropriate assumptions about how much I already know about the general topic. I dislike feeling like the lesson talks down to me, but at the same time I recognize the need to learn new material.
 
-Syntax and grammar
+![face book and study](/assets/images/facebook-study.jpg)
+
+This includes actual study. Learning the [spec](http://golang.org/ref/spec) for whatever language you're using will pay off tremendously in time saved over constantly looking up basic syntax stuff ("how do I write a `for` loop in this one again?"). That has cost me more in time wasted and buggy code than it ever should have. 
 
 ## Exercise your knowledge
 
@@ -33,3 +36,5 @@ Syntax and grammar
 
 https://twitter.com/matonis/status/597800103643086848
 > I'm a fan of project-oriented learning. Design a taks, Google your way out of it until it works.
+
+[Go by Example](https://gobyexample.com/)
