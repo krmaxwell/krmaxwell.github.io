@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "On learning new programming languages"
-categories: Programming,Education
+categories: Programming,Education,Python,Golang
 ---
 
 I decided a couple of decades ago that I wanted to speak Spanish beyond the very basics we learned in junior high and high school (which didn't include much, even in Texas). That meant I wanted to achieve a conversational level, at a minimum. Circumstances at the time prevented me from moving to another country for _full_ immersion, but I could come close to that living in Dallas. Through intense self-directed study and spending large amounts of time in environments where I *had to* speak Spanish - or at least *could* speak Spanish - eventually I reached good professional proficiency.
@@ -46,5 +46,12 @@ Mike Matonis tweeted some good [advice](https://twitter.com/matonis/status/59780
 
 This may remind you a bit of [How to Program (in four easy steps)](https://imgur.com/wOsEq7N), but in this case you should use that "step 2" to learn rather than just fueling step 3 "copy and paste".
 
-_read other people's code_
-[Go by Example](https://gobyexample.com/)
+Reading other people's code helps a lot here, either when it's organized for that purpose (as in [Go by Example](https://gobyexample.com/)) or when done in an organized fashion. I'm in a small "Python Poetry Reading Club" where we do just this. Not only has it given me insight on better, more idiomatic Python, it has helped me understand _how_ I dissect code. (In my case, it turns out that I unconsciously follow the same process as when analyzing malware, which makes sense in its own way.)
+
+Collaborating with others also helps. We each know different sorts of things, so you should not feel any shame when somebody who knows (say) the Python ecosystem better than you [shows you the right way to set up a package](https://github.com/mlsecproject/combine/pull/138). At the same time.
+
+## Wrapping up
+
+This process never ends, by the way. I will never reach a point where I've learned all I need to know about programming, because that's the path to irrelevancy. (My knowledge of Spanish gets better all the time, too, because I apply it every day.)
+
+With that in mind, I've started learning Go lately. The adventure begins again...
