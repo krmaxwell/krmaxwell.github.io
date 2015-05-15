@@ -69,3 +69,9 @@ Sciences has thoroughly ripped the poly to shreds. I appreciate, in particular,
 their point that even if the test was as accurate as claimed, it would still be
 terrible for detecting spies because of the [Base rate fallacy](http://en.wikipedia.org/wiki/Base_rate_fallacy). You would reject thousands
 of qualified truthful candidates to weed out some of the spies.
+
+## The immeasurable value of the poly
+All that having been said, the poly is an amazing tool and there is probably a
+good reason that the government continues to use it. When used as part of a complete
+theater production it can create a very convincing [appeal to authority](http://en.wikipedia.org/wiki/Argument_from_authority) that most
+candidates will accept.
