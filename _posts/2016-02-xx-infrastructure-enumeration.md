@@ -72,4 +72,4 @@ The rest of the time, I have a collection of small Python scripts to query data 
 
 # Other comments
 
-The above presents the most straightforward and obvious methods of enumeration. Other advanced methods may apply. For example, some landing pages will use Google Analytics. The script tag will include the Analytics user account ID (e.g. "UA-2309503-4") and that tag may be used on multiple sites. Mirroring and analyzing (exploiting) information from sites may yield additional indicators for further investigation.
+The above presents the most straightforward and obvious methods of enumeration. Other advanced methods may apply. For example, some landing pages will use Google Analytics. The script tag will include the Analytics user account ID (e.g. "UA-2309503-4") and that tag may be used on multiple sites. Mirroring and analyzing (exploiting) information from sites may yield additional indicators for further investigation. Another method involves pivoting off of different types of DNS records (not just `A` and `CNAME`).
