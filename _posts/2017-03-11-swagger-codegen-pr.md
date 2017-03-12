@@ -4,7 +4,7 @@ title: "How I ended up submitting a tiny PR to swagger-codegen"
 categories: Programming,Python,OpenSource
 ---
 
-One of the nicer trends in API development has been the growth of the [OpenAPI specification](https://github.com/OAI/OpenAPI-Specification) (formerly known as [swagger](http://swagger.io/)). This allows API providers to document their interface easily and improve the developer experience (DX) for anyone using it. 
+One of the nicer trends in API development has been the growth of the [OpenAPI specification](https://github.com/OAI/OpenAPI-Specification) (formerly known as [swagger](http://swagger.io/)). This allows API providers to document their interface easily and improve the developer experience (DX) for anyone using it.
 
 Because the specification comes as a machine-readable file (usually JSON or YAML), tools like [swagger-codegen](https://github.com/swagger-api/swagger-codegen) can process the spec file and automatically generate a set of bindings for that particular API in a given language. That can really help navigating the ins and outs of particularly large or complex APIs, and thus reduce time to deployment.
 
