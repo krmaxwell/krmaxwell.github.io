@@ -19,7 +19,7 @@ Python has a lot of data types that make working with data sets a real pleasure.
 
 So imagine you're processing some data and you want to count how often you see certain objects (like strings in a list). This gets unwieldy quickly, especially if you have additional associated logic. But `collections.Counter()` provides a handy Pythonic way to implement this pattern.
 
-## Old and busted
+## Old and busted: if/else
 
 {% highlight python %}
 counts = dict()
@@ -30,7 +30,7 @@ for each in data:
     counts[each] =1
 {% endhighlight %}
 
-## New hotness
+## New hotness: Counter
 
 {% highlight python %}
 counts = collections.Counter()
@@ -44,7 +44,7 @@ for each in data:
 
 We can simplify this even further with a _list comprehension_. In general, you place a `for` loop inside a pair of square brackets, with the expression for each result at the beginning.
 
-## Old and busted
+## Old and busted: multiple lines
 
 {% highlight python %}
 counts = collections.Counter()
@@ -52,7 +52,7 @@ for each in data:
   counts[each] += 1
 {% endhighlight %}
 
-## New hotness
+## New hotness: one line
 
 {% highlight python %}
 [counts[each]+=1 for each in data]

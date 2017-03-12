@@ -47,7 +47,7 @@ Presenting your research or a solid explanation of little-understood techniques 
 # External references
 
 - [Writing the CFP](http://speaking.io/plan/writing-a-cfp/) (Zach Holman)
-- [4 Tips to Get a Conference "Call for Papers" Submission Accepted](http://blog.whitehatsec.com/4-tips-to-get-a-conference-call-for-papers-submission-accepted/) (Jeremiah Grossman)
+- [4 Tips to Get a Conference \"Call for Papers\" Submission Accepted](http://blog.whitehatsec.com/4-tips-to-get-a-conference-call-for-papers-submission-accepted/) (Jeremiah Grossman)
 - [How do I make my CFP stand out?](https://www.defcon.org/html/links/dc-speakerscorner.html#nikita-cfp) (Nikita)
 - [Create Good Security CFP Responses](http://hexsec.blogspot.com/2012/12/create-good-security-cfp-responses.html) (Nathan Hamiel)
 - [The Hierarchy of Information Security Talks](https://danielmiessler.com/blog/hierarchy-information-security-talks/) (Daniel Miessler)

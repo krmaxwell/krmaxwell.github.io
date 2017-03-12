@@ -4,7 +4,7 @@ title: "Python tricks: dictionary, setdefault, and addict"
 categories: Python, Programming
 ---
 
-_This post was written by guest blogger [Kevin "@bfist" Thompson](https://twitter.com/bfist) who is too lazy to start his own blog and just camps out on others like a homeless bass player crashing on friend's couches. Second in an occasional series._
+_This post was written by guest blogger [Kevin \"@bfist\" Thompson](https://twitter.com/bfist) who is too lazy to start his own blog and just camps out on others like a homeless bass player crashing on friend's couches. Second in an occasional series._
 
 One of the cooler things I get to tell people is that I'm one of the people behind the [VERIS Framework](https://github.com/vz-risk/veris) and the [VERIS Community Database](https://github.com/vz-risk/vcdb). _[Ed.: NERD!]_ VERIS is a schema for describing information security incidents that affect an organization and incidents are represented as JSON objects. This means that I spent a lot of time in Python manipulating dictionaries. I've picked up a couple of methods that are pretty helpful.
 

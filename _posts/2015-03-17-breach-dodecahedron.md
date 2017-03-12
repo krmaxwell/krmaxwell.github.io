@@ -4,7 +4,7 @@ title: "The Breach Dodecahedron"
 categories: Security, Guest Blog
 ---
 
-_This post was written by guest blogger and broham extraordinaire [Kevin "@bfist" Thompson](https://twitter.com/bfist). For more ramblings on risk management and pro wrestling, go follow him!_
+_This post was written by guest blogger and broham extraordinaire [Kevin \"@bfist\" Thompson](https://twitter.com/bfist). For more ramblings on risk management and pro wrestling, go follow him!_
 
 I spend a lot of my time reading breach reports for publicly disclosed incidents or reading reports from forensic organizations about security breaches. A while back I noticed that our industry seems to have a fascination with geometry. For example, we have the CIA triad, which later gave rise to the Parkerian hexad, and as I was going over an old [Trustwave Global Security Report](http://www2.trustwave.com/rs/trustwave/images/2013-Global-Security-Report.pdf) I saw that they decided to change their breach triangle into a breach quadrilateral so that their model would better reflect the data they were seeing. But in the security field, more is better; why have four sides or six sides when you can have 12?  Why have a two-dimensional shape when you can have a three-dimensional shape?  And so it is with tongue firmly in cheek that I present the Breach Dodecahedron.
 
