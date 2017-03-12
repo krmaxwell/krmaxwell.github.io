@@ -1,0 +1,8 @@
+machine:
+  environment:
+    NOKOGIRI_USE_SYSTEM_LIBRARIES: true
+  ruby:
+    version: 2.1.4
+test:
+  override:
+    - ./script/cibuild
