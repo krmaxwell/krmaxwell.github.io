@@ -11,6 +11,7 @@ In the process of 'leveling up' as a programmer, I have started trying to implem
 When implementing engineering guidelines in community-developed projects (such as open source software), we have to take a few steps. GitHub will show a link to a [contributor guide](https://github.com/blog/1184-contributing-guidelines) on all issue and pull request pages. The guidelines document should explain the process, as well as any other considerations (such as licensing and coding standards).
 
 # Basic flow
+
 I've used the [**Github Flow**](https://guides.github.com/introduction/flow/) for quite a while for lots of things (recently including even [this blog](https://github.com/krmaxwell/krmaxwell.github.io)). But this mostly applies to processes that use continuous deployment, like GitHub itself. It can also work pretty well for documentation and other similar projects that don't need the concept of "releases".
 
 For projects with staged releases, we need a few more bits. The git branching model [documented](http://nvie.com/posts/a-successful-git-branching-model/) by [Vincent Driessen](https://twitter.com/nvie) has become quite popular lately. I think it really just shows how to use git for implementing a very common model we've used for a long time. (I recall using this basic approach twenty years ago when our source code collaboration just relied on using a whiteboard to document who had which file checked out. That sucked as hard as it sounds.)

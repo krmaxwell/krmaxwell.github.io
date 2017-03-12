@@ -39,6 +39,7 @@ print(myDict) # {'lname': 'Thompson', 'fname': 'Kevin'}
 {% endhighlight %}
 
 ## What about defaultdict?
+
 The `collections` library in python gives us `defaultdict` which does something pretty similar to what we have done above. With `defaultdict` we create a dictionary and define a default container that will apply to *every* missing key. So if you want to create a dictionary that will hold other dictionaries, you can do something like this:
 
 {% highlight python %}

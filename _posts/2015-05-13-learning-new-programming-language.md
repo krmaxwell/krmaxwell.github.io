@@ -9,6 +9,7 @@ I decided a couple of decades ago that I wanted to speak Spanish beyond the very
 This demonstrates a good model for learning programming languages.
 
 # Do the work
+
 [![talent](/assets/images/talent-development.png)](http://threepanelsoul.com/2015/05/11/talent/)
 
 **There is no shortcut to success in learning. You have to do the work.** People love to talk about how much they "want" to learn something, or how they started and got distracted. Somehow they often give the impression that that's almost as good.
@@ -20,6 +21,7 @@ Learning a new skill requires time and effort. While [Learn X in Y minutes](http
 Note, I certainly understand that other people may learn in different ways. The whole issue of learning theory and pedagogy lies well outside my expertise. So the rest of this post will just discuss what has worked for me. Hopefully somebody else can get some good ideas they can use out of it.
 
 # Build your knowledge
+
 Personally, I prefer instruction oriented toward people who already understand code. Explanations of the concept of variables and basic logic constructs wastes my time. Instead, give me a good explanation of syntax (the grammar, as it were). For a programmer with an existing skill set, resources like [Learn Code the Hard Way](http://learncodethehardway.org/) work much better than [Codecademy](http://www.codecademy.com/learn).
 
 NB: "X for Dummies"-styled instruction is a total non-starter for me. I'm not a dummy just because I don't know X yet, and neither are you. You are a smart, capable person who wants to learn something new. We should celebrate the desire to learn, not feed into a societal psychosis that rejects _knowing things_.
@@ -52,6 +54,6 @@ Collaborating with others also helps. We each know different sorts of things, so
 
 # Wrapping up
 
-This process never ends, by the way. I will never reach a point where I've learned all I need to know about programming, because that's the path to irrelevancy. (My knowledge of Spanish gets better all the time, too, because I apply it every day.) 
+This process never ends, by the way. I will never reach a point where I've learned all I need to know about programming, because that's the path to irrelevancy. (My knowledge of Spanish gets better all the time, too, because I apply it every day.)
 
 With that in mind, I've started learning Go lately. The adventure begins again...

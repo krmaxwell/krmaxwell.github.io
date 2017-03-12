@@ -44,7 +44,7 @@ for each in data:
 
 We can simplify this even further with a _list comprehension_. In general, you place a `for` loop inside a pair of square brackets, with the expression for each result at the beginning.
 
-## Old and busted:
+## Old and busted
 
 {% highlight python %}
 counts = collections.Counter()
@@ -52,7 +52,7 @@ for each in data:
   counts[each] += 1
 {% endhighlight %}
 
-## New hotness:
+## New hotness
 
 {% highlight python %}
 [counts[each]+=1 for each in data]
