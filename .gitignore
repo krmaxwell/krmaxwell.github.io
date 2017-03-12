@@ -1,4 +1,16 @@
 _site
 .sass-cache
+.DS_Store
+.jekyll-metadata
+
+# Ignore the config file that's used for gh-pages.
+_config.gh-pages.yml
+
+Gemfile.lock
+
+# vim swap files
 *.swp
-*.lock
+
+# ruby bundle crap
+.bundle/
+vendor/

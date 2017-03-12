@@ -4,7 +4,7 @@ title: "The Breach Dodecahedron"
 categories: Security, Guest Blog
 ---
 
-_This post was written by guest blogger and broham extraordinaire [Kevin "@bfist" Thompson](https://twitter.com/bfist). For more ramblings on risk management and pro wrestling, go follow him!_
+_This post was written by guest blogger and broham extraordinaire [Kevin \"@bfist\" Thompson](https://twitter.com/bfist). For more ramblings on risk management and pro wrestling, go follow him!_
 
 I spend a lot of my time reading breach reports for publicly disclosed incidents or reading reports from forensic organizations about security breaches. A while back I noticed that our industry seems to have a fascination with geometry. For example, we have the CIA triad, which later gave rise to the Parkerian hexad, and as I was going over an old [Trustwave Global Security Report](http://www2.trustwave.com/rs/trustwave/images/2013-Global-Security-Report.pdf) I saw that they decided to change their breach triangle into a breach quadrilateral so that their model would better reflect the data they were seeing. But in the security field, more is better; why have four sides or six sides when you can have 12?  Why have a two-dimensional shape when you can have a three-dimensional shape?  And so it is with tongue firmly in cheek that I present the Breach Dodecahedron.
 
@@ -13,18 +13,18 @@ A dodecahedron is a three-dimensional, 12-sided shape as seen in the picture bel
 <img src="/assets/images/dodecahedron.png" alt="Dodecadedron - 12-sided 3-dimensional shape", height="33%", width="33%" align="right" />
 The 12 phases of the Breach Dodecahedron are as follows:
 
-1.	Target Selection
-2.	Reconnaissance
-3.	Scanning
-4.	Gaining Access
-5.	Maintaining Access
-6.	Lateral Expansion
-7.	Searching for Data
-8.	Aggregation
-9.	Exfiltration
-10.	Monetizing
-11.	Covering Tracks
-12.	High Five
+1. Target Selection
+2. Reconnaissance
+3. Scanning
+4. Gaining Access
+5. Maintaining Access
+6. Lateral Expansion
+7. Searching for Data
+8. Aggregation
+9. Exfiltration
+10. Monetizing
+11. Covering Tracks
+12. High Five
 
 It’s easy to see how an attacker might move through these phases multiple times or skip some of them. Some attackers never cover their tracks, and others surely high five many times during an attack. A three-dimensional shape really illustrates these possibilities because there are more directions to turn rather than ahead and backwards.
 

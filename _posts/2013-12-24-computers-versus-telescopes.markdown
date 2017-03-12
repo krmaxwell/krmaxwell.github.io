@@ -8,7 +8,7 @@ categories: Programming
 
 > Computer science is no more about computers than astronomy is about telescopes.  -- Michael R Fellows [?](http://en.wikiquote.org/wiki/Computer%20science#Disputed)
 
-Lots of folks have written in the past about the distinction between computer science and programming. A comment on Twitter reminded me of this again, but in an odd direction: the commenter expressed some dissatisfaction about having to learn some of the *history* of computer science while learning to program. 
+Lots of folks have written in the past about the distinction between computer science and programming. A comment on Twitter reminded me of this again, but in an odd direction: the commenter expressed some dissatisfaction about having to learn some of the *history* of computer science while learning to program.
 
 From a certain perspective, I can understand. Folks just dabbling in something like [The Hour of Code](http://csedweek.org) might not have the interest or motivation right away to learn about Ada Lovelace and John von Neumann and Alan Turing. They likely have the motivation just to understand the whole idea of giving specific commands to a computer and thinking in advance of possible things that could happen - the mental framework that we coders take completely for granted.
 

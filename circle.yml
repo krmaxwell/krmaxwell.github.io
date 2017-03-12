@@ -3,6 +3,9 @@ machine:
     NOKOGIRI_USE_SYSTEM_LIBRARIES: true
   ruby:
     version: 2.1.4
+dependencies:
+  override:
+    - bundle install
 test:
   override:
     - ./script/cibuild

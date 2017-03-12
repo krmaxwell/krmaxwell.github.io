@@ -17,9 +17,10 @@ Once we make the request, though, we need to handle possible errors. We should p
 I suppose this could be rewritten as a class but that seems like one level of abstraction too far. And procedural programming can never go out of style.
 
 {% highlight python %}
-# Utility function to get a URL with error handling
-# Accepts URL string or urllib2.Request object
 def get_url(orig_request):
+    # Utility function to get a URL with error handling
+    # Accepts URL string or urllib2.Request object
+
     if isinstance(orig_request, basestring):
         url = orig_request.encode('utf8')
         request = urllib2.Request(url)
