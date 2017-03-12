@@ -5,4 +5,4 @@ source 'https://rubygems.org'
 # https://github.com/github/pages-gem
 gem 'github-pages'
 gem 'mdl'
-gem 'html-proofer', '>=2.1.0"
+gem 'html-proofer', '>=2.1.0'
