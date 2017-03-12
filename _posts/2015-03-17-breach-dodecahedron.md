@@ -13,18 +13,18 @@ A dodecahedron is a three-dimensional, 12-sided shape as seen in the picture bel
 <img src="/assets/images/dodecahedron.png" alt="Dodecadedron - 12-sided 3-dimensional shape", height="33%", width="33%" align="right" />
 The 12 phases of the Breach Dodecahedron are as follows:
 
-1.	Target Selection
-2.	Reconnaissance
-3.	Scanning
-4.	Gaining Access
-5.	Maintaining Access
-6.	Lateral Expansion
-7.	Searching for Data
-8.	Aggregation
-9.	Exfiltration
-10.	Monetizing
-11.	Covering Tracks
-12.	High Five
+1. Target Selection
+2. Reconnaissance
+3. Scanning
+4. Gaining Access
+5. Maintaining Access
+6. Lateral Expansion
+7. Searching for Data
+8. Aggregation
+9. Exfiltration
+10. Monetizing
+11. Covering Tracks
+12. High Five
 
 It’s easy to see how an attacker might move through these phases multiple times or skip some of them. Some attackers never cover their tracks, and others surely high five many times during an attack. A three-dimensional shape really illustrates these possibilities because there are more directions to turn rather than ahead and backwards.
 

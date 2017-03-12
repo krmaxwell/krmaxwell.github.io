@@ -8,8 +8,7 @@ So [@da_667](https://twitter.com/da_667) started a thread [on Twitter](https://t
 
 > Let's have a discussion. But before we do that - Disclaimer: Parentel discretion is advised. Any resemblance of the following scenario to any actual real-life scenario is purely coincidental. Scenario: You manage IDS/IPS systems, honeypots, FPC devices, whatever. You caught some bad shit coming over your pipes: attackers trying to exploit some of your webservers. Some of these exploits are just php system() calls to curl to download files over FTP. These FTP calls contained creds. Would you then, proceed to go on a download spree on the payload server with said creds? Addendum: fuck ethics. This is a scenario where you only get a single shot. Would you or would you not use the creds and download everything?
 
-
-## Alignment talk
+# Alignment talk
 
 In the ensuing discussion, [@stauken](https://twitter.com/stauken) made a [D&D alignment reference](https://twitter.com/stauken/status/576132190813057024):
 > so what you're saying is, lawful evil exists for a reason
@@ -24,42 +23,42 @@ In the latter case, then, that depends very much on the perspective of the viewe
 
 So returning to the original scenario, let's look at how different alignments might react. If you think of better ways to characterize these, please by all means [ping me on Twitter](https://twitter.com/kylemaxwell)!
 
-### Lawful Good
+## Lawful Good
 
 LG would not use the credentials and log into the server because that would appear _prima facie_ illegal in most jurisdictions. However, they might contact law enforcement or share that information (threat intelligence) with appropriate network security teams in other organizations so that they can check for possible indicators of compromise.
 
-### Neutral Good
+## Neutral Good
 
 NG **might** log in to see if the server contains additional exfiltrated data. Likely, however, they'd consult with their legal counsel and otherwise follow the same course as LG in this particular scenario.
 
-### Chaotic Good
+## Chaotic Good
 
 CG would not care much about the law in this situation. They would log into the server, exfiltrate the data, and use it to notify other victims. However, they would not use those data for their own selfish benefit. They might even go a step further and take some action to shut down the server or expose the attacker.
 
-### Lawful Neutral
+## Lawful Neutral
 
 LN generally follows LG in this scenario. They might be slightly less likely to notify other groups, however, as they'd focus their concern on their own defensive responsibilities.
 
-### True Neutral
+## True Neutral
 
 TN (or just N) would possibly not do anything. However, it depends on which type of N they identify as. "Undecided" would simply secure their systems and move onto the next incident. The type of neutral who tries to maintain balance between law & order and good & evil might log into the server and try to determine where the balance of power lies (e.g. is the information from inexpert regular people or powerful organizations?) before making a decision.
 
-### Chaotic Neutral
+## Chaotic Neutral
 
 CN doesn't care. They log in and replace all the exfiltrated data with copies of _Paradise Lost_ or just `/dev/random`. Like their "Good" counterparts, they might expose the attacker to others - but for fun rather than to stop them.
 
-### Lawful Evil
+## Lawful Evil
 
 LE would generally do the same as LG here. If anything, they'd contact Law Enforcement (also LE!) with the intention of bringing the law's hammer down upon their adversaries. They might even use the situation to advance within their organization at the expense of existing management.
 
-### Neutral Evil
+## Neutral Evil
 
 NE would log into the server and destroy it, or at least their own information. They might expose the attacker or, just as likely, use the information for their own benefit.
 
-### Chaotic Evil
+## Chaotic Evil
 
 CE realizes that the server contains valuable data that they could use for their own benefit. They might subtly corrupt the information on the server after copying it themselves, then use it for financial gain or even to compromise the other victims themselves for additional gain.
 
-## Back to the hats
+# Back to the hats
 
 A more detailed system of alignment reveals the possibility for much more nuance. Importantly, almost no one sees themselves as "evil". EasyDamus includes a discussion of [real-world alignments](http://www.easydamus.com/alignmentreal.html) that could be useful here.

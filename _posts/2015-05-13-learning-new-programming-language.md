@@ -8,7 +8,7 @@ I decided a couple of decades ago that I wanted to speak Spanish beyond the very
 
 This demonstrates a good model for learning programming languages.
 
-## Do the work
+# Do the work
 [![talent](/assets/images/talent-development.png)](http://threepanelsoul.com/2015/05/11/talent/)
 
 **There is no shortcut to success in learning. You have to do the work.** People love to talk about how much they "want" to learn something, or how they started and got distracted. Somehow they often give the impression that that's almost as good.
@@ -19,7 +19,7 @@ Learning a new skill requires time and effort. While [Learn X in Y minutes](http
 
 Note, I certainly understand that other people may learn in different ways. The whole issue of learning theory and pedagogy lies well outside my expertise. So the rest of this post will just discuss what has worked for me. Hopefully somebody else can get some good ideas they can use out of it.
 
-## Build your knowledge
+# Build your knowledge
 Personally, I prefer instruction oriented toward people who already understand code. Explanations of the concept of variables and basic logic constructs wastes my time. Instead, give me a good explanation of syntax (the grammar, as it were). For a programmer with an existing skill set, resources like [Learn Code the Hard Way](http://learncodethehardway.org/) work much better than [Codecademy](http://www.codecademy.com/learn).
 
 NB: "X for Dummies"-styled instruction is a total non-starter for me. I'm not a dummy just because I don't know X yet, and neither are you. You are a smart, capable person who wants to learn something new. We should celebrate the desire to learn, not feed into a societal psychosis that rejects _knowing things_.
@@ -30,7 +30,7 @@ NB: "X for Dummies"-styled instruction is a total non-starter for me. I'm not a 
 
 This part of the process includes actual study. Learning the [spec](http://golang.org/ref/spec) for a given language will pay off tremendously in time saved over constantly looking up basic syntax stuff ("how do I write a `for` loop in this one again?"). That has cost me more in time wasted and buggy code than it ever should have.
 
-## Exercise your knowledge
+# Exercise your knowledge
 
 I remember my dad asking me how well I understood the language after finishing Spanish II. As an arrogant teenager with an acute case of [Dunning-Kruger syndrome](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect), I thought that I only lacked vocabulary.
 
@@ -50,7 +50,7 @@ Reading other people's code helps a lot here, either when it's organized for tha
 
 Collaborating with others also helps. We each know different sorts of things, so you should not feel any shame when somebody who knows a language's ecosystem better than you [shows you the right way to set up a Python package](https://github.com/mlsecproject/combine/pull/138). Working on [free software](https://gnu.org/philosophy/free-sw.html) provides unparalleled opportunities to do this, although the scope of getting involved in those communities is something I should cover in a separate post.
 
-## Wrapping up
+# Wrapping up
 
 This process never ends, by the way. I will never reach a point where I've learned all I need to know about programming, because that's the path to irrelevancy. (My knowledge of Spanish gets better all the time, too, because I apply it every day.) 
 
