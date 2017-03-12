@@ -10,3 +10,7 @@ Gemfile.lock
 
 # vim swap files
 *.swp
+
+# ruby bundle crap
+.bundle/
+vendor/
