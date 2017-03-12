@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "D&D alignments and hat colors"
+title: "D&amp;D alignments and hat colors"
 categories: Security
 ---
 
