@@ -1,11 +1,11 @@
 # Site settings
-title:       Pixyll
-email:       your_email@example.com
-author:      John Otander
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+title:       Kyle Maxwell
+email:       krmaxwell#gmail
+author:      Kyle Maxwell
+description: Just another tech blog
 baseurl:     ""
-url:         "http://pixyll.com"
-date_format: "%b %-d, %Y"
+url:         "http://xwell.org"
+date_format: "%Y-%m-%d"
 
 # Google services
 google_verification:
@@ -42,10 +42,10 @@ facebook_appid:
 facebook_comments_number: 10
 
 # Social icons
-github_username:
+github_username: krmaxwell
 bitbucket_username:
 stackoverflow_id:
-twitter_username:
+twitter_username: kylemaxwell
 skype_username:
 steam_nickname:
 google_plus_id:
@@ -57,17 +57,17 @@ paypal_url:
 flattr_button:
 
 # Post sharing icons
-show_sharing_icons: false
+show_sharing_icons: true
 # Change to 'true' to enable individual icons
-share_facebook: false
-share_twitter: false
-share_googleplus: false
+share_facebook: true
+share_twitter: true
+share_googleplus: true
 share_linkedin: false
 share_digg: false
 share_tumblr: false
-share_reddit: false
+share_reddit: true
 share_stumbleupon: false
-share_hackernews: false
+share_hackernews: true
 
 text:
   pagination:
@@ -115,3 +115,6 @@ gems:
   - jekyll-sitemap
 # https://github.com/jekyll/jekyll/issues/2938
 exclude: [vendor]
+
+# Octopress migration
+permalink: /:year/:month/:day/:title/
