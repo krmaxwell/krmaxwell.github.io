@@ -3,35 +3,36 @@ layout: post
 title: "Infrastructure Enumeration"
 categories: Security
 ---
-# Introduction
 
-During an investigation or analysis, we often want to start with one piece of information, such as a hash or URL, and list as much related infrastructure as possible.
+During an investigation or analysis, we often want to start with one piece of information, such as a hash or URL, and list as much related infrastructure as possible. By "infrastructure", I mean IP and domain addresses, URLs, and similar host and network identifiers.
 
-By "infrastructure" we mean IP and domain addresses, URLs, and similar host and network identifiers.
+These notes provide guidance on some particularly basic methods.
 
-These notes provide guidance on some basic methods.
+# Starting points
 
-# Starting point: file
+The methods used will generally depend on whatever data we have at the beginning. For simplicity, let's start with some atomic indicators, but keep in mind that the [Pyramid of Pain](http://detect-respond.blogspot.com/2013/03/the-pyramid-of-pain.html) means that our ease of investigating them is matched by the adversary's ease of changing them.
+
+## File
 
 Most malware analysts already understand the basics when starting with a piece of malcode or other file. Extracting addresses may occur via static analysis (such as listing out strings or decrypting embedded data) or via dynamic analysis (such as observing C2 comms).
 
-Additionally, searching open sources (e.g. Virustotal) for the file hash can occasionally yield URLs indicating locations where the file was observed. This is obviously context-dependent.
+Additionally, searching for the file hash in open sources like Virustotal, Malwr.com, or even Google can occasionally yield URLs indicating locations where the file was observed. This is obviously context-dependent.
 
-# Starting point: IP address
+## IP address
 
-When given an IP address, we generally want to know the following things:
+When given an IP address, we generally want to know the following things, often starting with the mentioned resources:
 
 - Who has this IP address assignment? (IANA WHOIS)
 - What names resolve to this address? (reverse DNS or passive DNS)
-- What past activity has been associated with this address? (Black lists & similar DBs)
+- What past activity has been associated with this address? (black lists and similar databases)
 
-In some contexts, geolocation may also be useful. Analysts should think carefully about how applicable this information will be in a given situation and beware drawing strong conclusions based on this.
+In some contexts, geolocation may also be useful. Analysts should think carefully about how applicable this information will be in a given situation and beware drawing strong conclusions based on this. 
 
-# Starting point: Domain name
+## Domain name
 
 When given a domain name, first determine whether this is a fully-qualified domain name (e.g. `example.com` or `example.co.uk`) or potentially just a subdomain or even a host name.
 
-For domains, we generally want the following information:
+For domains, we generally want the following information, with useful resource types listed again:
 
 - What is the registrant's name, location, and especially email address, and has that changed over time? (historical WHOIS)
 - What was the date of initial registration (domain age)? (WHOIS)
@@ -40,7 +41,7 @@ For domains, we generally want the following information:
 
 Registrant data is often fake and should never be assumed to reflect a true identity without corroborating data. However, these data (especially email addresses) can be used to correlate with other data points, as we will see in a moment.
 
-# Starting point: Email address
+## Email address
 
 In the case of enumerating infrastructure, email addresses can be particularly valuable as registrants.
 
@@ -49,7 +50,7 @@ In the case of enumerating infrastructure, email addresses can be particularly v
 
 # Pivoting
 
-Obviously, making one hop does not necessarily provide the needed analytic value. The key here is to pivot multiple times. For example, if we're investigating a domain name, we can use WHOIS and then reverse WHOIS to determine what other domains may be associated with that same actor. We can then pivot using passive DNS to see what IP addresses are associated with these domains, whether they share infrastructure, and perhaps link to other incidents or campaigns.
+Obviously, finding a related indicator one hop away does not necessarily provide much analytic value. Indicators will almost always need to pivot multiple times. For example, if we're investigating a domain name, we can use WHOIS and then reverse WHOIS to determine what other domains may be associated with that same actor. We can then pivot using passive DNS to see what IP addresses are associated with these domains, whether they share infrastructure, and perhaps link to other incidents or campaigns.
 
 As a note, IP addresses can present significant challenges when associated with large hosting providers. Some IP addresses may host hundreds or even thousands of domain names. In those cases, we need to try alternate methods to find related infrastructure.
 
