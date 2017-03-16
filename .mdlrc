@@ -1,0 +1,10 @@
+rules "~MD009,~MD013,~MD023,~MD026,~MD029,~MD033,~MD036"
+
+# MD009 Trailing spaces
+# MD013 Line length
+# MD023 Headers must start at the beginning of the line (doesn't work for code comments)
+# MD026 Trailing punctuation in header (I almost like this rule but need to allow ?s)
+# MD029 Ordered list item prefix
+# MD033 Inline HTML (sometimes you just gotta)
+# MD036 Emphasis used instead of a header
+

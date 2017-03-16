@@ -10,15 +10,16 @@ The book surprised me by having more applications (and earlier in it) than I exp
 
 > Note to self: get [MathJax](http://www.mathjax.org) working in Jekyll at some point.
 
-## Theory
+# Theory
 
 Understanding the theory here involves two key realizations.
+
 1. Only certain codewords are valid, due to the use of specific bits within the word as parity checks (a form of error checking).
 1. The distance between any two codewords (the weight their XOR) is the minimum number of bit flips to change one codeword into another.
 
 Therefore, if we receive an invalid word, we check to see which valid codeword is "nearest" to it. In a code where the minimum distance is 2, that means that flipping a single bit in a word can **always** be detected. Flipping two bits, though, may mean that we get another "valid" codeword in error. Larger minimum distances help. If the minimum distance is *m*, then we can always detect errors of *m-1* bits (because those can never result in another valid codeword). Even better, we can **correct** errors of *(m-1)/2* bits or fewer. We do this by finding the minimum distance between the received word and the valid codewords (XORing and calculating the weight), then correcting to the nearest one.
 
-## Code
+# Code
 
 This exposed some gaps in my knowledge of Python around bitwise operators. It didn't help that the problem labels the bits in an awkward fashion (at least to my programmer-mind), since it starts by labeling the most significant bit *a<sub>1</sub>*. I don't doubt that Python has easier ways to do all this, but I couldn't find them and wanted to focus on the math more than the code. So first I wrote a quick function to slice out a given bit from the word:
 
